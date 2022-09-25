@@ -1,0 +1,5 @@
+description: Namespace Response
+content:
+  application/json:
+    schema:
+      $ref: ../../schemas/Namespace/Namespace.yaml

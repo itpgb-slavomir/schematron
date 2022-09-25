@@ -1,0 +1,44 @@
+get:
+  tags:
+  - Document
+  description: Get Document List
+  operationId: getDocumentList
+  parameters:
+  - $ref:  ../../components/parameters/Page.yaml
+  - $ref:  ../../components/parameters/PageSize.yaml
+  - $ref:  ../../components/parameters/SortBy.yaml
+  - $ref:  ../../components/parameters/SortOrder.yaml
+  responses:
+    '200':
+      $ref: ../../components/responses/Document/DocumentList.yaml
+    '400':
+      $ref: ../../components/responses/Error/BadRequest.yaml
+    '403':
+      $ref: ../../components/responses/Error/Unauthorized.yaml
+    '404':
+      $ref: ../../components/responses/Error/NotFound.yaml
+    '500':
+      $ref: ../../components/responses/Error/UnexpectedError.yaml
+    '501':
+      $ref: ../../components/responses/Error/NotImplemented.yaml
+
+put:
+  tags:
+  - Document
+  description: Create Document
+  operationId: createDocument
+  requestBody:
+    $ref:  ../../components/requestBodies/Document/Document.yaml
+  responses:
+    '200':
+      $ref: ../../components/responses/Document/Document.yaml
+    '400':
+      $ref: ../../components/responses/Error/BadRequest.yaml
+    '403':
+      $ref: ../../components/responses/Error/Unauthorized.yaml
+    '404':
+      $ref: ../../components/responses/Error/NotFound.yaml
+    '500':
+      $ref: ../../components/responses/Error/UnexpectedError.yaml
+    '501':
+      $ref: ../../components/responses/Error/NotImplemented.yaml

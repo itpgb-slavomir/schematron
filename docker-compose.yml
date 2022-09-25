@@ -1,15 +1,27 @@
 version: '3.3'
 services:
-  db:
-    image: postgres:14.1-alpine
-    restart: always
-    environment:
+
+   web:
+      build:
+         context: ./schematron-web/schematron-web-app
+         dockerfile: Dockerfile
+      volumes:
+      - ./schematron-web/schematron-web-app/src/main/resources:/var/www
+      ports:
+      - 4200:4200
+   db:
+      image: postgres:14.1-alpine
+      restart: always
+      environment:
       - POSTGRES_USER=postgres
       - POSTGRES_PASSWORD=postgres
-    ports:
-      - '5432:5432'
-    volumes: 
+      ports:
+      - 5432:5432
+      volumes:
       - db:/var/lib/postgresql/data
+
 volumes:
-  db:
-    driver: local
+   db:
+      driver: local
+   web:
+      driver: local

@@ -32,10 +32,14 @@ servers:
 components:
    securitySchemes:
       BEARER:
-         $ref: './securitySchemes/BEARER.yaml'
+         $ref: './components/securitySchemes/BEARER.yaml'
 
 paths:
    /document:
       $ref: './paths/Document/DocumentList.yaml'
    /document/{DocumentId}:
       $ref: './paths/Document/Document.yaml'
+   /namespace:
+      $ref: './paths/Namespace/NamespaceList.yaml'
+   /namespace/{NamespaceId}:
+      $ref: './paths/Namespace/Namespace.yaml'

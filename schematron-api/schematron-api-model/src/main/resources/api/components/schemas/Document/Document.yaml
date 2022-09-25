@@ -16,3 +16,6 @@ properties:
   name:
     type: string
     minLength: 1
+  content:
+    type: string
+    format: blob

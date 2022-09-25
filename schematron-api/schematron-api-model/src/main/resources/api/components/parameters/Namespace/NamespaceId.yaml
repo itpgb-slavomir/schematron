@@ -1,0 +1,7 @@
+name: NamespaceId
+in: query
+description: Namespace Id
+required: true
+schema:
+  type: integer
+  format: int64

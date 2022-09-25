@@ -2,4 +2,4 @@ description: Document List Response
 content:
   application/json:
     schema:
-      $ref: ../../schemas/Document/DocumentkList.yaml
+      $ref: ../../schemas/Document/DocumentList.yaml

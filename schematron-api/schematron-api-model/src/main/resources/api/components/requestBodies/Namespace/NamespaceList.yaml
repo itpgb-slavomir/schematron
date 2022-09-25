@@ -1,0 +1,5 @@
+description: Namespace List Request Body
+content:
+  application/json:
+    schema:
+      $ref: ../../schemas/Namespace/NamespaceList.yaml

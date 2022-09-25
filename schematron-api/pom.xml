@@ -13,6 +13,10 @@
 
 	<modules>
 		<module>schematron-api-model</module>
+		<module>schematron-api-jpa</module>
+		<module>schematron-api-interface</module>
+		<module>schematron-api-server</module>
+		<module>schematron-api-angular-client</module>
 	</modules>
 
 </project>
