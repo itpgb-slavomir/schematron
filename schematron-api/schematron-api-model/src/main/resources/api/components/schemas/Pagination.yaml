@@ -1,0 +1,17 @@
+type: object
+properties:
+  itemsTotalCount:
+    type: integer
+    format: int64
+  itemPageCount:
+    type: integer
+    format: int64
+  pageCurrent:
+    type: integer
+    format: int64
+  pageSize:
+    type: integer
+    format: int64
+  pageCount:
+    type: integer
+    format: int64

@@ -1,0 +1,6 @@
+name: SortOrder
+in: query
+description: Sort Order parameter
+required: false
+schema:
+  $ref: '../schemas/SortOrder.yaml'

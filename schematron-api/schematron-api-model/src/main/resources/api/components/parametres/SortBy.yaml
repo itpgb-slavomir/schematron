@@ -1,0 +1,6 @@
+name: SortBy
+in: query
+description: Sort By parameter
+required: false
+schema:
+  $ref: '../schemas/SortBy.yaml'

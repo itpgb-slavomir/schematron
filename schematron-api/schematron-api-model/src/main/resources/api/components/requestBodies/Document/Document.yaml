@@ -1,0 +1,6 @@
+description: Document Request Body
+required: true
+content:
+  application/json:
+    schema:
+      $ref: ../../schemas/Document/Document.yaml

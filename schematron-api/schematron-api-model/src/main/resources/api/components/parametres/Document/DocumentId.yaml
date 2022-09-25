@@ -1,0 +1,7 @@
+name: DocumentId
+in: query
+description: Document Id
+required: true
+schema:
+  type: integer
+  format: int64

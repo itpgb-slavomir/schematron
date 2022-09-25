@@ -1,0 +1,62 @@
+get:
+  tags:
+  - Document
+  description: Get Document
+  operationId: getDocument
+  parameters:
+  - $ref:  ../../components/parameters/Document/DocumentId.yaml
+  responses:
+    '200':
+      $ref: ../../components/responses/Document/Document.yaml
+    '400':
+      $ref: ../../components/responses/Error/BadRequest.yaml
+    '403':
+      $ref: ../../components/responses/Error/Unauthorized.yaml
+    '404':
+      $ref: ../../components/responses/Error/NotFound.yaml
+    '500':
+      $ref: ../../components/responses/Error/UnexpectedError.yaml
+    '501':
+      $ref: ../../components/responses/Error/NotImplemented.yaml
+patch:
+  tags:
+  - Document
+  description: Update Document
+  operationId: updateDocument
+  parameters:
+  - $ref:  ../../components/parameters/Document/DocumentId.yaml
+  requestBody:
+    $ref:  ../../components/requestBodies/Document/Document.yaml
+  responses:
+    '200':
+      $ref: ../../components/responses/Document/Document.yaml
+    '400':
+      $ref: ../../components/responses/Error/BadRequest.yaml
+    '403':
+      $ref: ../../components/responses/Error/Unauthorized.yaml
+    '404':
+      $ref: ../../components/responses/Error/NotFound.yaml
+    '500':
+      $ref: ../../components/responses/Error/UnexpectedError.yaml
+    '501':
+      $ref: ../../components/responses/Error/NotImplemented.yaml
+delete:
+  tags:
+  - Document
+  description: Delete Document
+  operationId: deleteDocument
+  parameters:
+  - $ref:  ../../components/parameters/Document/DocumentId.yaml
+  responses:
+    '200':
+      $ref: ../../components/responses/Document/Document.yaml
+    '400':
+      $ref: ../../components/responses/Error/BadRequest.yaml
+    '403':
+      $ref: ../../components/responses/Error/Unauthorized.yaml
+    '404':
+      $ref: ../../components/responses/Error/NotFound.yaml
+    '500':
+      $ref: ../../components/responses/Error/UnexpectedError.yaml
+    '501':
+      $ref: ../../components/responses/Error/NotImplemented.yaml

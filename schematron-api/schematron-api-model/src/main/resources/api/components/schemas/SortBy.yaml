@@ -1,0 +1,4 @@
+description: Sort by columns
+type: array
+items:
+  type: string

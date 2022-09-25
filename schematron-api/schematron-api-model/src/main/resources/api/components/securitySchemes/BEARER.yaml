@@ -1,0 +1,4 @@
+type: http
+description: BEARER Authentication
+scheme: bearer
+bearerFormat: JWT
