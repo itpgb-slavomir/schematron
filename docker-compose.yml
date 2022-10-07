@@ -5,6 +5,7 @@ services:
       build:
          context: ./schematron-web/schematron-web-app
          dockerfile: Dockerfile
+      restart: always
       volumes:
       - ./schematron-web/schematron-web-app/src/main/resources:/var/www
       ports:

@@ -5,4 +5,5 @@ run npm install -g npm@latest
 RUN npm install -g @eui/cli@latest >> /dev/null
 RUN yarn install --verbose >> /dev/null
 RUN yarn add @eui/dynamic-forms >> /dev/null
+EXPOSE 4200
 CMD ["npm", "run", "start"]
