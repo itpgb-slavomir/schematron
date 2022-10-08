@@ -8,8 +8,8 @@
 		<version>0.0.1-SNAPSHOT</version>
 	</parent>
 
-	<groupId>cy.bishub.schematron.api</groupId>
-	<artifactId>schematron-api-interface</artifactId>
-	<name>Schematron - API - Interface</name>
+	<artifactId>schematron-api-client-angular</artifactId>
+	<name>Schematron - API - Client - Angular</name>
+	<description>Schematron - API - Client- Angular</description>
 
 </project>

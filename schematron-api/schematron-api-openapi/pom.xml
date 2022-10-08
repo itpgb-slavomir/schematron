@@ -9,8 +9,8 @@
 		<version>0.0.1-SNAPSHOT</version>
 	</parent>
 
-	<artifactId>schematron-api-model</artifactId>
-	<name>Schematron - API - Model</name>
+	<artifactId>schematron-api-openapi</artifactId>
+	<name>Schematron - API - Openapi</name>
 	<packaging>jar</packaging>
 
 	<build>

@@ -5,6 +5,7 @@
     <artifactId>schematron-api</artifactId>
     <version>0.0.1-SNAPSHOT</version>
   </parent>
-  <artifactId>schematron-api-jpa</artifactId>
-  <name>Schematron - API - JPA</name>
+  <artifactId>schematron-api-client-java</artifactId>
+  <name>Schematron - API - Client - Java</name>
+  <description>Schematron - API - Client - Java </description>
 </project>
