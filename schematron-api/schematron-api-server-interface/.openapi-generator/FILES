@@ -1,0 +1,11 @@
+src/main/java/cy/bishub/schematron/api/model/Document.java
+src/main/java/cy/bishub/schematron/api/model/DocumentList.java
+src/main/java/cy/bishub/schematron/api/model/Namespace.java
+src/main/java/cy/bishub/schematron/api/model/Pagination.java
+src/main/java/cy/bishub/schematron/api/rest/ApiUtil.java
+src/main/java/cy/bishub/schematron/api/rest/DocumentApi.java
+src/main/java/cy/bishub/schematron/api/rest/DocumentApiController.java
+src/main/java/cy/bishub/schematron/api/rest/DocumentApiDelegate.java
+src/main/java/cy/bishub/schematron/api/rest/NamespaceApi.java
+src/main/java/cy/bishub/schematron/api/rest/NamespaceApiController.java
+src/main/java/cy/bishub/schematron/api/rest/NamespaceApiDelegate.java

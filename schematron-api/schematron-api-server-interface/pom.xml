@@ -3,13 +3,107 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<parent>
-		<groupId>cy.bishub.schematron</groupId>
+		<groupId>cy.bishub.schematron.api</groupId>
 		<artifactId>schematron-api</artifactId>
 		<version>0.0.1-SNAPSHOT</version>
 	</parent>
 
-	<groupId>cy.bishub.schematron.api</groupId>
 	<artifactId>schematron-api-server-interface</artifactId>
 	<name>Schematron - API - Server - Interface</name>
+	<packaging>jar</packaging>
+
+	<properties>
+		<formatter-maven-plugin.version>2.19.0</formatter-maven-plugin.version>
+	</properties>
+
+	<dependencies>
+
+		<dependency>
+			<groupId>cy.bishub.schematron.api</groupId>
+			<artifactId>schematron-api-openapi</artifactId>
+			<version>${project.version}</version>
+		</dependency>
+
+	</dependencies>
+
+	<build>
+
+		<resources>
+
+			<resource>
+				<directory>${project.basedir}/src/main/resources</directory>
+				<filtering>true</filtering>
+			</resource>
+
+		</resources>
+
+		<plugins>
+
+			<plugin>
+
+				<groupId>org.openapitools</groupId>
+				<artifactId>openapi-generator-maven-plugin</artifactId>
+
+				<executions>
+
+					<execution>
+
+						<id>generate-server</id>
+						<phase>generate-resources</phase>
+
+						<goals>
+							<goal>generate</goal>
+						</goals>
+
+						<configuration>
+
+							<inputSpec>${project.parent.basedir}/schematron-api-openapi/src/main/resources/api/api.yaml</inputSpec>
+							<library>spring-boot</library>
+							<generatorName>spring</generatorName>
+							<templateDirectory>${project.basedir}/src/main/resources/templates</templateDirectory>
+							<output>${project.basedir}</output>
+							<verbose>false</verbose>
+							<generateApiDocumentation>true</generateApiDocumentation>
+							<generateModelDocumentation>true</generateModelDocumentation>
+							<generateModelRepository>true</generateModelRepository>
+							<generateSupportingFiles>true</generateSupportingFiles>
+							<supportingFilesToGenerate>ApiUtil.java</supportingFilesToGenerate>
+
+							<configOptions>
+								<delegatePattern>true</delegatePattern>
+								<useTags>true</useTags>
+								<basePackage>cy.bishub.schematron.api</basePackage>
+								<configPackage>cy.bishub.schematron.api.configuration</configPackage>
+								<apiPackage>cy.bishub.schematron.api.rest</apiPackage>
+								<modelPackage>cy.bishub.schematron.api.model</modelPackage>
+								<repoPackage>cy.bishub.schematron.api.repo</repoPackage>
+								<invokerPackage>cy.bishub.schematron.api.invoker</invokerPackage>
+								<title>${project.name}</title>
+							</configOptions>
+
+						</configuration>
+
+					</execution>
+
+				</executions>
+
+			</plugin>
+
+			<plugin>
+
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+
+				<configuration>
+					<source>${maven.compiler.source}</source>
+					<target>${maven.compiler.target}</target>
+					<verbose>true</verbose>
+				</configuration>
+
+			</plugin>
+
+		</plugins>
+
+	</build>
 
 </project>
