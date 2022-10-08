@@ -221,7 +221,6 @@
 							<verbose>false</verbose>
 							<generateApiDocumentation>true</generateApiDocumentation>
 							<generateModelDocumentation>true</generateModelDocumentation>
-							<generateModelRepository>true</generateModelRepository>
 							<generateSupportingFiles>true</generateSupportingFiles>
 							<supportingFilesToGenerate>ApiUtil.java</supportingFilesToGenerate>
 
@@ -232,7 +231,6 @@
 								<configPackage>cy.bishub.schematron.api.configuration</configPackage>
 								<apiPackage>cy.bishub.schematron.api.rest</apiPackage>
 								<modelPackage>cy.bishub.schematron.api.model</modelPackage>
-								<repoPackage>cy.bishub.schematron.api.repo</repoPackage>
 								<invokerPackage>cy.bishub.schematron.api.invoker</invokerPackage>
 								<title>${project.name}</title>
 							</configOptions>
@@ -242,6 +240,42 @@
 					</execution>
 
 				</executions>
+
+			</plugin>
+
+			<plugin>
+
+				<groupId>com.cmeza</groupId>
+				<artifactId>spring-data-generator</artifactId>
+				<version>${spring-data-generator.version}</version>
+
+				<executions>
+
+					<execution>
+
+						<phase>generate-sources</phase>
+						<goals>
+
+							<goal>repositories</goal>
+							<!--							<goal>services</goal>-->
+
+						</goals>
+
+					</execution>
+
+				</executions>
+
+				<configuration>
+					<entity-package>
+						<param>cy.bishub.schematron.api.model</param>
+					</entity-package>
+					<repository-package>cy.bishub.schematron.api.repository</repository-package>
+					<manager-package>cy.bishub.schematron.api.manager</manager-package>
+					<repository-postfix>Repository</repository-postfix>
+					<manager-postfix>Manager</manager-postfix>
+					<only-annotations>false</only-annotations>
+					<overwrite>true</overwrite>
+				</configuration>
 
 			</plugin>
 

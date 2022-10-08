@@ -1,6 +1,7 @@
 package cy.bishub.schematron.api.rest;
 
 import cy.bishub.schematron.api.model.Namespace;
+import cy.bishub.schematron.api.model.NamespaceList;
 
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,9 +26,8 @@ import java.util.Map;
 import java.util.Optional;
 import javax.annotation.Generated;
 
-@Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2022-10-08T11:48:47.833581+02:00[Europe/Paris]")
+@Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2022-10-08T14:01:56.234011+02:00[Europe/Paris]")
 @Controller
-@RequestMapping("${openapi.Schematron - API - Server - Interface.base-path:/v1}")
 public class NamespaceApiController implements NamespaceApi {
 
     private final NamespaceApiDelegate delegate;

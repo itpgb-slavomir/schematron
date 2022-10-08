@@ -24,7 +24,7 @@ tags:
      description: Attribute operations
 
 servers:
--  url: http://localhost:8080/v1
+-  url: http://localhost:8080
    description: Development server
 -  url: http://api.schematron.bishub.cy/v1
    description: Production server

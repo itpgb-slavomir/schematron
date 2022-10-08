@@ -5,7 +5,6 @@ import java.util.Objects;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import cy.bishub.schematron.api.model.Document;
-import cy.bishub.schematron.api.model.Pagination;
 import java.util.ArrayList;
 import java.util.List;
 import org.openapitools.jackson.nullable.JsonNullable;
@@ -23,7 +22,7 @@ import javax.annotation.Generated;
 /**
  * DocumentList
  */
-@Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2022-10-08T11:48:47.833581+02:00[Europe/Paris]")
+@Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2022-10-08T14:01:56.234011+02:00[Europe/Paris]")
 // TODO Add x-java-class-annotation
 public class DocumentList   {
 

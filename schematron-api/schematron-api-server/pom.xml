@@ -13,7 +13,7 @@
 	<name>Schematron - API - Server</name>
 
 	<properties>
-		<environment.postgresql.host>db</environment.postgresql.host>
+		<environment.postgresql.host>localhost</environment.postgresql.host>
 		<environment.postgresql.port>5432</environment.postgresql.port>
 		<environment.postgresql.database>schematron</environment.postgresql.database>
 		<environment.postgresql.user>postgres</environment.postgresql.user>
@@ -175,20 +175,14 @@
 
 		<dependency>
 			<groupId>cy.bishub.schematron.api</groupId>
-			<artifactId>schematron-api-interface</artifactId>
+			<artifactId>schematron-api-server-interface</artifactId>
 			<version>${project.version}</version>
 		</dependency>
 
 		<dependency>
-			<groupId>com.maxmind.geoip2</groupId>
-			<artifactId>geoip2</artifactId>
-			<version>${geoip2.version}</version>
-		</dependency>
-
-		<dependency>
-			<groupId>com.opencsv</groupId>
-			<artifactId>opencsv</artifactId>
-			<version>${opencsv.version}</version>
+			<groupId>cy.bishub.schematron.api</groupId>
+			<artifactId>schematron-api-server-jpa</artifactId>
+			<version>${project.version}</version>
 		</dependency>
 
 		<dependency>

@@ -7,4 +7,5 @@
 	</parent>
 	<artifactId>schematron-api-server-jpa</artifactId>
 	<name>Schematron - API - Server - JPA</name>
+
 </project>

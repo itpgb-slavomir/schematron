@@ -22,5 +22,56 @@
 		</dependency>
 
 	</dependencies>
+	<build>
+
+		<plugins>
+
+			<plugin>
+
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-dependency-plugin</artifactId>
+
+				<executions>
+
+					<execution>
+
+						<id>unpack-dependency</id>
+						<phase>generate-sources</phase>
+
+						<goals>
+							<goal>unpack</goal>
+						</goals>
+
+						<configuration>
+
+							<artifactItems>
+
+								<artifactItem>
+
+									<groupId>cy.bishub.schematron.api</groupId>
+									<artifactId>schematron-api-client-angular</artifactId>
+									<type>jar</type>
+									<overWrite>true</overWrite>
+									<outputDirectory>${project.basedir}/src/app/schematron-client</outputDirectory>
+									<includes>**/*.*</includes>
+
+								</artifactItem>
+
+							</artifactItems>
+
+							<overWriteReleases>true</overWriteReleases>
+							<overWriteSnapshots>true</overWriteSnapshots>
+
+						</configuration>
+
+					</execution>
+
+				</executions>
+
+			</plugin>
+
+		</plugins>
+
+	</build>
 
 </project>

@@ -26,9 +26,8 @@ import java.util.Map;
 import java.util.Optional;
 import javax.annotation.Generated;
 
-@Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2022-10-08T11:48:47.833581+02:00[Europe/Paris]")
+@Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2022-10-08T14:01:56.234011+02:00[Europe/Paris]")
 @Controller
-@RequestMapping("${openapi.Schematron - API - Server - Interface.base-path:/v1}")
 public class DocumentApiController implements DocumentApi {
 
     private final DocumentApiDelegate delegate;
