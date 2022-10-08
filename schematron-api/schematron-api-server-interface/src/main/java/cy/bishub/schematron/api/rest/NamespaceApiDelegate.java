@@ -16,7 +16,7 @@ import javax.annotation.Generated;
  * A delegate to be called by the {@link NamespaceApiController}}.
  * Implement this interface with a {@link org.springframework.stereotype.Service} annotated class.
  */
-@Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2022-10-08T10:44:07.549843+02:00[Europe/Paris]")
+@Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2022-10-08T11:48:47.833581+02:00[Europe/Paris]")
 public interface NamespaceApiDelegate {
 
     default Optional<NativeWebRequest> getRequest() {

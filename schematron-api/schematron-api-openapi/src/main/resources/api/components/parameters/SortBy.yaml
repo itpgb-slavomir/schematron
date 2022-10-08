@@ -3,4 +3,7 @@ in: query
 description: Sort By parameter
 required: false
 schema:
-  $ref: '../schemas/SortBy.yaml'
+  description: Sort by columns
+  type: array
+  items:
+    type: string

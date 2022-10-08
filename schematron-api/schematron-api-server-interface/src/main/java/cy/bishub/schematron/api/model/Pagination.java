@@ -19,7 +19,7 @@ import javax.annotation.Generated;
 /**
  * Pagination
  */
-@Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2022-10-08T10:44:07.549843+02:00[Europe/Paris]")
+@Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2022-10-08T11:48:47.833581+02:00[Europe/Paris]")
 // TODO Add x-java-class-annotation
 public class Pagination   {
 

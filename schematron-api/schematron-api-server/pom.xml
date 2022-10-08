@@ -12,6 +12,14 @@
 	<artifactId>schematron-api-server</artifactId>
 	<name>Schematron - API - Server</name>
 
+	<properties>
+		<environment.postgresql.host>db</environment.postgresql.host>
+		<environment.postgresql.port>5432</environment.postgresql.port>
+		<environment.postgresql.database>schematron</environment.postgresql.database>
+		<environment.postgresql.user>postgres</environment.postgresql.user>
+		<environment.postgresql.schema>public</environment.postgresql.schema>
+		<environment.postgresql.password>Passw0rd</environment.postgresql.password>
+	</properties>
 
 	<dependencies>
 
@@ -166,6 +174,12 @@
 		</dependency>
 
 		<dependency>
+			<groupId>cy.bishub.schematron.api</groupId>
+			<artifactId>schematron-api-interface</artifactId>
+			<version>${project.version}</version>
+		</dependency>
+
+		<dependency>
 			<groupId>com.maxmind.geoip2</groupId>
 			<artifactId>geoip2</artifactId>
 			<version>${geoip2.version}</version>
@@ -181,12 +195,6 @@
 			<groupId>io.jsonwebtoken</groupId>
 			<artifactId>jjwt</artifactId>
 			<version>${jjwt.verion}</version>
-		</dependency>
-
-		<dependency>
-			<groupId>cy.bishub.schematron.api</groupId>
-			<artifactId>schematron-api-interface</artifactId>
-			<version>${project.version}</version>
 		</dependency>
 
 	</dependencies>
@@ -207,13 +215,36 @@
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-resources-plugin</artifactId>
+			</plugin>
+
+			<plugin>
+
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId>
 
 				<configuration>
+					<excludeDevtools>false</excludeDevtools>
+				</configuration>
 
-					<nonFilteredFileExtensions>
-						<nonFilteredFileExtension>mmdb</nonFilteredFileExtension>
-					</nonFilteredFileExtensions>
+				<executions>
+					<execution>
+						<goals>
+							<goal>repackage</goal>
+						</goals>
+					</execution>
+				</executions>
 
+			</plugin>
+
+			<plugin>
+
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+
+				<configuration>
+					<source>${maven.compiler.source}</source>
+					<target>${maven.compiler.target}</target>
+					<verbose>true</verbose>
 				</configuration>
 
 			</plugin>
@@ -221,4 +252,5 @@
 		</plugins>
 
 	</build>
+
 </project>

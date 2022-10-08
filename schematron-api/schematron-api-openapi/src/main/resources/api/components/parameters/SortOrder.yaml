@@ -3,4 +3,10 @@ in: query
 description: Sort Order parameter
 required: false
 schema:
-  $ref: '../schemas/SortOrder.yaml'
+   description: Sort columns orders
+   type: array
+   items:
+      type: string
+      enum:
+      - ASC
+      - DESCC

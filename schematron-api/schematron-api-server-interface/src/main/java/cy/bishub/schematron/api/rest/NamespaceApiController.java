@@ -25,8 +25,9 @@ import java.util.Map;
 import java.util.Optional;
 import javax.annotation.Generated;
 
-@Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2022-10-08T10:44:07.549843+02:00[Europe/Paris]")
+@Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2022-10-08T11:48:47.833581+02:00[Europe/Paris]")
 @Controller
+@RequestMapping("${openapi.Schematron - API - Server - Interface.base-path:/v1}")
 public class NamespaceApiController implements NamespaceApi {
 
     private final NamespaceApiDelegate delegate;
