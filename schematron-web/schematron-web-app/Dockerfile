@@ -1,9 +1,9 @@
 FROM "node:lts-alpine3.16"
-ADD ./src/main/resources /var/www
-WORKDIR '/var/www'
-run npm install -g npm@latest
-RUN npm install -g @eui/cli@latest >> /dev/null
-RUN yarn install --verbose >> /dev/null
-RUN yarn add @eui/dynamic-forms >> /dev/null
+
+WORKDIR /var/www
+RUN npm install -g npm@latest
+RUN npm install -g @eui/cli@latest
+#RUN yarn install
+#RUN yarn add @eui/dynamic-forms
 EXPOSE 4200
-CMD ["npm", "run", "start"]
+#CMD ["npm", "run", "start"]
