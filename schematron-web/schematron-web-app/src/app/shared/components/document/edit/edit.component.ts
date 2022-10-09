@@ -1,15 +1,15 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-edit',
-  templateUrl: './edit.component.html',
-  styleUrls: ['./edit.component.scss']
+	selector: 'sx-document-edit',
+	templateUrl: './edit.component.html',
+	styleUrls: ['./edit.component.scss']
 })
-export class EditComponent implements OnInit {
+export class SXDocumentEditComponent implements OnInit {
 
-  constructor() { }
+	constructor() { }
 
-  ngOnInit(): void {
-  }
+	ngOnInit(): void {
+	}
 
 }

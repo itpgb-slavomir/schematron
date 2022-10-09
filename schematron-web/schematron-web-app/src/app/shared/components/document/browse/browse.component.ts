@@ -1,13 +1,13 @@
 import { Component, OnInit } from '@angular/core';
-import { DocumentList, DocumentService } from 'src/app/shared/schematron-client';
-import { SharedModule } from './../../../shared.module';
+import { DocumentService } from 'src/app/shared/api-client/api/document.service';
+import { DocumentList } from 'src/app/shared/api-client/model/documentList';
 
 @Component({
-	selector: 'app-browse',
+	selector: 'sx-document-browse',
 	templateUrl: './browse.component.html',
 	styleUrls: ['./browse.component.scss']
 })
-export class BrowseComponent implements OnInit {
+export class SXDocumentBrowseComponent implements OnInit {
 
 	public documentList: DocumentList;
 

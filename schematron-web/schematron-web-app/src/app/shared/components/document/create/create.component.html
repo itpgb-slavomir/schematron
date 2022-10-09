@@ -1,13 +1,38 @@
 <eui-card>
+
 	<eui-card-header>
+
 		<eui-card-header-title>
-			<a [routerLink]="['']">{{'create-document-title' | translate}}</a>
+			<a [routerLink]="['/document/create']">{{'create-document-title' | translate}}</a>
 		</eui-card-header-title>
+
 		<eui-card-header-subtitle>
 			{{'create-document-subtitle' | translate}}
 		</eui-card-header-subtitle>
+
 	</eui-card-header>
+
 	<eui-card-content>
 		{{'create-document-description' | translate}}
+
+		<sx-document-upload></sx-document-upload>
+
 	</eui-card-content>
+
+	<eui-card-footer>
+
+		<eui-card-footer-action-buttons>
+
+			<div class="row">
+				<div class="col-12 eui-u-flex-justify-content-end">
+					<a [routerLink]="['/document/edit']" euiButton euiSecondary>
+						{{'create-wizard.title' | translate }}
+					</a>
+				</div>
+			</div>
+
+		</eui-card-footer-action-buttons>
+
+	</eui-card-footer>
+
 </eui-card>

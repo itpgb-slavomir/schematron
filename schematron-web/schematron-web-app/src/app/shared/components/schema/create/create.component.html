@@ -1,13 +1,39 @@
 <eui-card>
+
 	<eui-card-header>
+
 		<eui-card-header-title>
-			{{'create-schema-title' | translate}}
+			<a [routerLink]="['/schema/create']">{{'create-schema-title' | translate}}</a>
 		</eui-card-header-title>
+
 		<eui-card-header-subtitle>
 			{{'create-schema-subtitle' | translate}}
 		</eui-card-header-subtitle>
+
 	</eui-card-header>
+
 	<eui-card-content>
+
 		{{'create-schema-description' | translate}}
+
+		<sx-document-upload></sx-document-upload>
+
 	</eui-card-content>
+
+	<eui-card-footer>
+
+		<eui-card-footer-action-buttons>
+
+			<div class="row">
+				<div class="col-12 eui-u-flex-justify-content-end">
+					<a [routerLink]="['/schema/edit']" euiButton euiSecondary>
+						{{'create-wizard.title' | translate }}
+					</a>
+				</div>
+			</div>
+
+		</eui-card-footer-action-buttons>
+
+	</eui-card-footer>
+
 </eui-card>

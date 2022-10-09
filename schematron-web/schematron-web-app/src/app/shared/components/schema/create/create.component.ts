@@ -2,11 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import { SharedModule } from './../../../shared.module';
 
 @Component({
-  selector: 'app-create',
+  selector: 'sx-schema-create',
   templateUrl: './create.component.html',
   styleUrls: ['./create.component.scss']
 })
-export class CreateComponent implements OnInit {
+export class SXSchemaCreateComponent implements OnInit {
 
   constructor() { }
 

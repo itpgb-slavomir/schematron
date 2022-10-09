@@ -1,15 +1,15 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-browse',
-  templateUrl: './browse.component.html',
-  styleUrls: ['./browse.component.scss']
+	selector: 'sx-namespace-browse',
+	templateUrl: './browse.component.html',
+	styleUrls: ['./browse.component.scss']
 })
-export class BrowseComponent implements OnInit {
+export class SXNamespaceBrowseComponent implements OnInit {
 
-  constructor() { }
+	constructor() { }
 
-  ngOnInit(): void {
-  }
+	ngOnInit(): void {
+	}
 
 }

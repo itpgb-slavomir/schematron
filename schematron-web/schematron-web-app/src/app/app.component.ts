@@ -20,14 +20,34 @@ export class AppComponent implements OnInit, OnDestroy {
 
 	toolbarMenuItems = [
 		{
-			label: 'Documents',
-			url: 'document',
+			label: 'Dashboard',
+			url: 'dashboard',
 			iconClass: ''
 		},
 		{
-			label: 'Create',
-			url: 'create',
-			iconClass: 'eui-icon-add'
+			label: 'Data',
+			url: 'data',
+			iconClass: ''
+		},
+		{
+			label: 'Reports',
+			url: 'reports',
+			iconClass: ''
+		},
+		{
+			label: 'Templates',
+			url: 'templates',
+			iconClass: ''
+		},
+		{
+			label: 'Workflows',
+			url: 'reports',
+			iconClass: ''
+		},
+		{
+			label: 'Admin',
+			url: 'admin',
+			iconClass: ''
 		},
 	];
 
@@ -39,7 +59,7 @@ export class AppComponent implements OnInit, OnDestroy {
 	];
 
 	constructor(
-		private store: Store<any>,
+		private store: Store<any>
 	) {
 		this.userState = this.store.select(getUserState);
 		this.subs.push(this.userState.subscribe((user: UserState) => {

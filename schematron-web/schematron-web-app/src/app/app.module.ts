@@ -1,21 +1,23 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { APP_INITIALIZER, NgModule } from '@angular/core';
-import { ApiModule } from './shared/schematron-client';
+import { CoreModule } from './core/core.module';
+import { SharedModule } from './shared/shared.module';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { CoreModule } from './core/core.module';
 import { AppStarterService } from './app-starter.service';
+import { DashboardComponent } from './features/dashboard/dashboard.component';
 
 @NgModule({
 	declarations: [
 		AppComponent,
+		DashboardComponent,
 	],
 	imports: [
 		BrowserModule,
 		BrowserAnimationsModule,
 		CoreModule,
-		ApiModule,
+		SharedModule,
 		AppRoutingModule,
 	],
 

@@ -1,6 +1,6 @@
 {
 	"app-name": "Schematron",
-	"app-title": "XML data management",
+	"app-title": "XML Documents",
     "page.home.title": "Welcome to schematron",
     "page.home.subtitle": "XML Schemas management",
     "app.search.button": "Search",
@@ -23,5 +23,6 @@
     "create-schema-description": "Upload *.xsd or *.zip documents or create new XSD document",
     "create-folder-title": "Create folder",
     "create-folder-subtitle": "Create new folder",
-    "create-folder-description": ""
+    "create-folder-description": "",
+    "upload": "Upload"
 }

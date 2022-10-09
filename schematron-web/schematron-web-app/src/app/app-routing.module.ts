@@ -1,76 +1,133 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { SharedModule } from './shared/shared.module';
+import { DashboardComponent } from './features/dashboard/dashboard.component';
 
-//import { IndexComponent as CreateWizardComponent } from './shared/components/create-wizard/index/index.component';
-//
-//import { BrowseComponent as DocumentBrowseComponent } from './shared/components/document/browse/browse.component';
-//import { DetailComponent as DocumentDetailComponent } from './shared/components/document/detail/detail.component';
-//import { SearchComponent as DocumentSearchComponent } from './shared/components/document/search/search.component';
-//import { EditComponent as DocumentEditComponent } from './shared/components/document/edit/edit.component';
-//import { CreateComponent as DocumentCreateComponent } from './shared/components/document/create/create.component';
+import { SXCreateWizardComponent } from './shared/components/create-wizard/index.component';
+
+import { SXDocumentBrowseComponent } from './shared/components/document/browse/browse.component';
+import { SXDocumentCreateComponent } from './shared/components/document/create/create.component';
+import { SXDocumentEditComponent } from './shared/components/document/edit/edit.component';
+import { SXDocumentDetailComponent } from './shared/components/document/detail/detail.component';
+
+import { SXSchemaCreateComponent } from './shared/components/schema/create/create.component';
 
 const routes: Routes = [
 
 	{
 		path: '',
-	},
-	/*
-	{
-		path: 'create',
-		component: CreateWizardComponent
+		redirectTo: 'dashboard',
+		pathMatch: 'full'
 	},
 
 	{
-		path: 'document',
-		component: DocumentBrowseComponent
+		path: 'dashboard',
+		component: DashboardComponent
 	},
+
+	{
+		path: 'create',
+		component: SXCreateWizardComponent
+	},
+
+	{
+		path: 'documents',
+		component: SXDocumentBrowseComponent
+	},
+
+	{
+		path: 'data',
+		component: SXDocumentBrowseComponent
+	},
+	{
+		path: 'reports',
+		component: SXDocumentBrowseComponent
+	},
+
+	{
+		path: 'templates',
+		component: SXDocumentBrowseComponent
+	},
+
+	{
+		path: 'folder/create',
+		component: SXCreateWizardComponent
+	},
+
+	{
+		path: 'folder/:uuid',
+		component: SXDocumentBrowseComponent
+	},
+
 	{
 		path: 'document/create',
-		component: DocumentCreateComponent,
-	},
-	{
-		path: 'document/modify/:id',
-		component: DocumentEditComponent,
-	},
-	{
-		path: 'document/search',
-		component: DocumentSearchComponent,
-	},
-	{
-		path: 'document/:id',
-		component: DocumentDetailComponent,
+		component: SXDocumentCreateComponent
 	},
 
 	{
-		path: 'schema',
-		loadChildren: () => import('./shared/schema/schema.module').then(m => m.SchemaModule)
+		path: 'schema/create',
+		component: SXDocumentEditComponent
 	},
+
 	{
-		path: 'create',
-		loadChildren: () => import('./shared/create-wizard/create-wizard.module').then(m => m.CreateWizardModule)
+		path: 'document/edit/:uuid',
+		component: SXDocumentEditComponent
 	},
+
 	{
-		path: 'attribute',
-		loadChildren: () => import('./shared/attribute/attribute.module').then(m => m.AttributeModule)
+		path: 'document/detail/:uuid',
+		component: SXDocumentDetailComponent
 	},
-	{
-		path: 'namespace',
-		loadChildren: () => import('./shared/namespace/namespace.module').then(m => m.NamespaceModule)
-	},
-	{
-		path: 'element',
-		loadChildren: () => import('./shared/element/element.module').then(m => m.ElementModule)
-	},
-	{
-		path: 'attribute',
-		loadChildren: () => import('./shared/attribute/attribute.module').then(m => m.AttributeModule)
-	},*/
+
+	/*
+		{
+			path: 'document',
+			component: DocumentBrowseComponent
+		},
+		{
+			path: 'document/create',
+			component: DocumentCreateComponent,
+		},
+		{
+			path: 'document/modify/:id',
+			component: DocumentEditComponent,
+		},
+		{
+			path: 'document/search',
+			component: DocumentSearchComponent,
+		},
+		{
+			path: 'document/:id',
+			component: DocumentDetailComponent,
+		},
+		/*
+			{
+				path: 'schema',
+				loadChildren: () => import('./shared/schema/schema.module').then(m => m.SchemaModule)
+			},
+			{
+				path: 'create',
+				loadChildren: () => import('./shared/create-wizard/create-wizard.module').then(m => m.CreateWizardModule)
+			},
+			{
+				path: 'attribute',
+				loadChildren: () => import('./shared/attribute/attribute.module').then(m => m.AttributeModule)
+			},
+			{
+				path: 'namespace',
+				loadChildren: () => import('./shared/namespace/namespace.module').then(m => m.NamespaceModule)
+			},
+			{
+				path: 'element',
+				loadChildren: () => import('./shared/element/element.module').then(m => m.ElementModule)
+			},
+			{
+				path: 'attribute',
+				loadChildren: () => import('./shared/attribute/attribute.module').then(m => m.AttributeModule)
+			},*/
 ];
 
 @NgModule({
 	imports: [
-		SharedModule,
 		RouterModule.forRoot(routes),
 	],
 })
