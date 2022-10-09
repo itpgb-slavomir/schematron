@@ -1,0 +1,62 @@
+get:
+  tags:
+  - Folder
+  description: Get Folder
+  operationId: getFolder
+  parameters:
+  - $ref:  ../../components/parameters/Folder/FolderName.yaml
+  responses:
+    '200':
+      $ref: ../../components/responses/Folder/Folder.yaml
+    '400':
+      $ref: ../../components/responses/Error/BadRequest.yaml
+    '403':
+      $ref: ../../components/responses/Error/Unauthorized.yaml
+    '404':
+      $ref: ../../components/responses/Error/NotFound.yaml
+    '500':
+      $ref: ../../components/responses/Error/UnexpectedError.yaml
+    '501':
+      $ref: ../../components/responses/Error/NotImplemented.yaml
+patch:
+  tags:
+  - Folder
+  description: Update Folder
+  operationId: updateFolder
+  parameters:
+  - $ref:  ../../components/parameters/Folder/FolderName.yaml
+  requestBody:
+    $ref:  ../../components/requestBodies/Folder/Folder.yaml
+  responses:
+    '200':
+      $ref: ../../components/responses/Folder/Folder.yaml
+    '400':
+      $ref: ../../components/responses/Error/BadRequest.yaml
+    '403':
+      $ref: ../../components/responses/Error/Unauthorized.yaml
+    '404':
+      $ref: ../../components/responses/Error/NotFound.yaml
+    '500':
+      $ref: ../../components/responses/Error/UnexpectedError.yaml
+    '501':
+      $ref: ../../components/responses/Error/NotImplemented.yaml
+delete:
+  tags:
+  - Folder
+  description: Delete Folder
+  operationId: deleteFolder
+  parameters:
+  - $ref:  ../../components/parameters/Folder/FolderName.yaml
+  responses:
+    '200':
+      $ref: ../../components/responses/Folder/Folder.yaml
+    '400':
+      $ref: ../../components/responses/Error/BadRequest.yaml
+    '403':
+      $ref: ../../components/responses/Error/Unauthorized.yaml
+    '404':
+      $ref: ../../components/responses/Error/NotFound.yaml
+    '500':
+      $ref: ../../components/responses/Error/UnexpectedError.yaml
+    '501':
+      $ref: ../../components/responses/Error/NotImplemented.yaml

@@ -1,0 +1,5 @@
+description: Attribute List Request Body
+content:
+  application/json:
+    schema:
+      $ref: ../../schemas/Attribute/AttributeList.yaml

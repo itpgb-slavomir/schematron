@@ -1,0 +1,5 @@
+description: Element List Response
+content:
+  application/json:
+    schema:
+      $ref: ../../schemas/Element/ElementList.yaml

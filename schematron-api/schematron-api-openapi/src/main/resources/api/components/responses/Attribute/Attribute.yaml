@@ -1,0 +1,5 @@
+description: Attribute Response
+content:
+  application/json:
+    schema:
+      $ref: ../../schemas/Attribute/Attribute.yaml

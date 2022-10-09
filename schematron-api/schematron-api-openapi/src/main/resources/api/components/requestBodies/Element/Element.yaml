@@ -1,0 +1,6 @@
+description: Element Request Body
+required: true
+content:
+  application/json:
+    schema:
+      $ref: ../../schemas/Element/Element.yaml

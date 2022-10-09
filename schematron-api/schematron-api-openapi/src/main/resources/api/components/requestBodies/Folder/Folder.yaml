@@ -1,0 +1,6 @@
+description: Folder Request Body
+required: true
+content:
+  application/json:
+    schema:
+      $ref: ../../schemas/Folder/Folder.yaml

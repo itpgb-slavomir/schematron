@@ -1,65 +1,64 @@
 version: '3.3'
 services:
 
-   db:
-      image: postgres:14.1-alpine
-      restart: always
-      environment:
-      - POSTGRES_DB=schematron
-      - POSTGRES_USER=postgres
-      - POSTGRES_PASSWORD=Passw0rd
-      ports:
-      - 5432:5432
-      volumes:
-      - db:/var/lib/postgresql/data
-      restart: unless-stopped
-      networks:
-      - schematron
+  db:
+     image: postgres:14.1-alpine
+     environment:
+     - POSTGRES_DB=schematron
+     - POSTGRES_USER=postgres
+     - POSTGRES_PASSWORD=Passw0rd
+     ports:
+     - 5432:5432
+     volumes:
+     - db:/var/lib/postgresql/data
+     restart: unless-stopped
+     networks:
+     - schematron
 
-#  rabbitmq:
-#    build: .
-#    container_name: rabbitmq
-#    ports:
-#    - "5672:5672"
-#    - "15672:15672"
-#     "15674:15674"
-#    environment:
-#    - RABBITMQ_DEFAULT_USER=admin
-#    - RABBITMQ_DEFAULT_PASS=Passw0rd
+  rabbitmq:
+    image: postgres:14.1-alpine
+    ports:
+    - "5672:5672"
+    - "15672:15672"
+    - "15674:15674"
+    environment:
+    - RABBITMQ_DEFAULT_USER=admin
+    - RABBITMQ_DEFAULT_PASS=Passw0rd
 #    volumes:
 #        - .docker-conf/rabbitmq/data/:/var/lib/rabbitmq/
 #        - .docker-conf/rabbitmq/log/:/var/log/rabbitmq
-#    networks:
-#    - schematron
+    networks:
+    - schematron
 
-   api:
-      build:
-         context: ./schematron-api/schematron-api-server
-         dockerfile: Dockerfile
-      volumes:
-      - ./schematron-api/schematron-server:/var/www
-#      ports:
-#      - 8080:8080
-      links:
-      - db
-      restart: unless-stopped
-      networks:
-      - schematron
+  api:
+     build:
+        context: ./schematron-api/schematron-api-server
+        dockerfile: Dockerfile
+     volumes:
+     - ./schematron-api/schematron-server:/var/www
+#     ports:
+#     - 8080:8080
+     links:
+     - db
+     - rabbitmq
+     restart: unless-stopped
+     networks:
+     - schematron
 
-   web:
-      build:
-         context: ./schematron-web/schematron-web-app
-         dockerfile: Dockerfile
-      restart: always
-      volumes:
-      - ./schematron-web/schematron-web-app:/var/www
-      ports:
-      - 4200:4200
-#      links:
-#      - api
-      restart: unless-stopped
-      networks:
-      - schematron
+  web:
+    build:
+       context: ./schematron-web/schematron-web-app
+       dockerfile: Dockerfile
+    restart: always
+    volumes:
+    - ./schematron-web/schematron-web-app:/var/www
+    ports:
+    - 4200:4200
+#     links:
+#     - api
+    restart: unless-stopped
+    networks:
+    - schematron
 
 volumes:
    db:

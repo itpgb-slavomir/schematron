@@ -1,0 +1,8 @@
+allOf:
+- $ref: '../Pagination.yaml'
+- type: object
+properties:
+  items:
+    type: array
+    items:
+      $ref: ./Element.yaml

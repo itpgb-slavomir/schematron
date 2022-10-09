@@ -4,6 +4,8 @@ import java.net.URI;
 import java.util.Objects;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
+import java.time.OffsetDateTime;
+import org.springframework.format.annotation.DateTimeFormat;
 import org.openapitools.jackson.nullable.JsonNullable;
 import java.time.OffsetDateTime;
 import javax.validation.Valid;
@@ -20,7 +22,7 @@ import javax.annotation.Generated;
  * Document Model
  */
 @ApiModel(description = "Document Model")
-@Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2022-10-08T14:01:56.234011+02:00[Europe/Paris]")
+@Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2022-10-09T00:27:57.669+02:00[Europe/Paris]")
 @javax.persistence.Entity(name="Document")
 public class Document   {
 
@@ -38,6 +40,18 @@ public class Document   {
   @JsonProperty("content")
   
   private String content;
+
+  
+  @JsonProperty("createDate")
+  @org.springframework.format.annotation.DateTimeFormat(iso = org.springframework.format.annotation.DateTimeFormat.ISO.DATE_TIME)
+  
+  private OffsetDateTime createDate;
+
+  
+  @JsonProperty("modifiedDate")
+  @org.springframework.format.annotation.DateTimeFormat(iso = org.springframework.format.annotation.DateTimeFormat.ISO.DATE_TIME)
+  
+  private OffsetDateTime modifiedDate;
 
   public Document id(Long id) {
     this.id = id;
@@ -93,6 +107,42 @@ public class Document   {
     this.content = content;
   }
 
+  public Document createDate(OffsetDateTime createDate) {
+    this.createDate = createDate;
+    return this;
+  }
+
+  /**
+   * Get createDate
+   * @return createDate
+  */
+  @ApiModelProperty(value = "")
+@Valid   public OffsetDateTime getCreateDate() {
+    return createDate;
+  }
+
+  public void setCreateDate(OffsetDateTime createDate) {
+    this.createDate = createDate;
+  }
+
+  public Document modifiedDate(OffsetDateTime modifiedDate) {
+    this.modifiedDate = modifiedDate;
+    return this;
+  }
+
+  /**
+   * Get modifiedDate
+   * @return modifiedDate
+  */
+  @ApiModelProperty(value = "")
+@Valid   public OffsetDateTime getModifiedDate() {
+    return modifiedDate;
+  }
+
+  public void setModifiedDate(OffsetDateTime modifiedDate) {
+    this.modifiedDate = modifiedDate;
+  }
+
 
   @Override
   public boolean equals(Object o) {
@@ -105,12 +155,14 @@ public class Document   {
     Document document = (Document) o;
     return Objects.equals(this.id, document.id) &&
         Objects.equals(this.name, document.name) &&
-        Objects.equals(this.content, document.content);
+        Objects.equals(this.content, document.content) &&
+        Objects.equals(this.createDate, document.createDate) &&
+        Objects.equals(this.modifiedDate, document.modifiedDate);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, content);
+    return Objects.hash(id, name, content, createDate, modifiedDate);
   }
 
   @Override
@@ -121,6 +173,8 @@ public class Document   {
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    content: ").append(toIndentedString(content)).append("\n");
+    sb.append("    createDate: ").append(toIndentedString(createDate)).append("\n");
+    sb.append("    modifiedDate: ").append(toIndentedString(modifiedDate)).append("\n");
     sb.append("}");
     return sb.toString();
   }

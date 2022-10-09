@@ -1,0 +1,6 @@
+description: Attribute Request Body
+required: true
+content:
+  application/json:
+    schema:
+      $ref: ../../schemas/Attribute/Attribute.yaml

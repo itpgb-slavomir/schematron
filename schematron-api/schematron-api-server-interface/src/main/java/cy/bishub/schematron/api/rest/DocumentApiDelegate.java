@@ -17,7 +17,7 @@ import javax.annotation.Generated;
  * A delegate to be called by the {@link DocumentApiController}}.
  * Implement this interface with a {@link org.springframework.stereotype.Service} annotated class.
  */
-@Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2022-10-08T14:01:56.234011+02:00[Europe/Paris]")
+@Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2022-10-09T00:27:57.669+02:00[Europe/Paris]")
 public interface DocumentApiDelegate {
 
     default Optional<NativeWebRequest> getRequest() {
@@ -41,7 +41,7 @@ public interface DocumentApiDelegate {
         getRequest().ifPresent(request -> {
             for (MediaType mediaType: MediaType.parseMediaTypes(request.getHeader("Accept"))) {
                 if (mediaType.isCompatibleWith(MediaType.valueOf("application/json"))) {
-                    String exampleString = "{ \"name\" : \"name\", \"id\" : 0, \"content\" : \"content\" }";
+                    String exampleString = "{ \"name\" : \"name\", \"modifiedDate\" : \"2000-01-23T04:56:07.000+00:00\", \"id\" : 0, \"content\" : \"content\", \"createDate\" : \"2000-01-23T04:56:07.000+00:00\" }";
                     ApiUtil.setExampleResponse(request, "application/json", exampleString);
                     break;
                 }
@@ -68,7 +68,7 @@ public interface DocumentApiDelegate {
         getRequest().ifPresent(request -> {
             for (MediaType mediaType: MediaType.parseMediaTypes(request.getHeader("Accept"))) {
                 if (mediaType.isCompatibleWith(MediaType.valueOf("application/json"))) {
-                    String exampleString = "{ \"name\" : \"name\", \"id\" : 0, \"content\" : \"content\" }";
+                    String exampleString = "{ \"name\" : \"name\", \"modifiedDate\" : \"2000-01-23T04:56:07.000+00:00\", \"id\" : 0, \"content\" : \"content\", \"createDate\" : \"2000-01-23T04:56:07.000+00:00\" }";
                     ApiUtil.setExampleResponse(request, "application/json", exampleString);
                     break;
                 }
@@ -95,7 +95,7 @@ public interface DocumentApiDelegate {
         getRequest().ifPresent(request -> {
             for (MediaType mediaType: MediaType.parseMediaTypes(request.getHeader("Accept"))) {
                 if (mediaType.isCompatibleWith(MediaType.valueOf("application/json"))) {
-                    String exampleString = "{ \"name\" : \"name\", \"id\" : 0, \"content\" : \"content\" }";
+                    String exampleString = "{ \"name\" : \"name\", \"modifiedDate\" : \"2000-01-23T04:56:07.000+00:00\", \"id\" : 0, \"content\" : \"content\", \"createDate\" : \"2000-01-23T04:56:07.000+00:00\" }";
                     ApiUtil.setExampleResponse(request, "application/json", exampleString);
                     break;
                 }
@@ -128,7 +128,7 @@ public interface DocumentApiDelegate {
         getRequest().ifPresent(request -> {
             for (MediaType mediaType: MediaType.parseMediaTypes(request.getHeader("Accept"))) {
                 if (mediaType.isCompatibleWith(MediaType.valueOf("application/json"))) {
-                    String exampleString = "{ \"items\" : [ { \"name\" : \"name\", \"id\" : 0, \"content\" : \"content\" }, { \"name\" : \"name\", \"id\" : 0, \"content\" : \"content\" } ] }";
+                    String exampleString = "{ \"items\" : [ { \"name\" : \"name\", \"modifiedDate\" : \"2000-01-23T04:56:07.000+00:00\", \"id\" : 0, \"content\" : \"content\", \"createDate\" : \"2000-01-23T04:56:07.000+00:00\" }, { \"name\" : \"name\", \"modifiedDate\" : \"2000-01-23T04:56:07.000+00:00\", \"id\" : 0, \"content\" : \"content\", \"createDate\" : \"2000-01-23T04:56:07.000+00:00\" } ] }";
                     ApiUtil.setExampleResponse(request, "application/json", exampleString);
                     break;
                 }
@@ -157,7 +157,7 @@ public interface DocumentApiDelegate {
         getRequest().ifPresent(request -> {
             for (MediaType mediaType: MediaType.parseMediaTypes(request.getHeader("Accept"))) {
                 if (mediaType.isCompatibleWith(MediaType.valueOf("application/json"))) {
-                    String exampleString = "{ \"name\" : \"name\", \"id\" : 0, \"content\" : \"content\" }";
+                    String exampleString = "{ \"name\" : \"name\", \"modifiedDate\" : \"2000-01-23T04:56:07.000+00:00\", \"id\" : 0, \"content\" : \"content\", \"createDate\" : \"2000-01-23T04:56:07.000+00:00\" }";
                     ApiUtil.setExampleResponse(request, "application/json", exampleString);
                     break;
                 }

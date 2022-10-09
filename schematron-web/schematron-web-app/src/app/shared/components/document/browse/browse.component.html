@@ -1,0 +1,68 @@
+<eui-page>
+
+	<eui-page-header 
+		label=""
+		subLabel="">
+
+		<eui-page-header-action-items>
+			<button euiButton euiPrimary>Upload</button>
+			<button euiButton euiPrimary>new-folder</button>
+			<button euiButton euiPrimary>new-document</button>
+		</eui-page-header-action-items>
+
+	</eui-page-header>
+
+	<eui-page-header 
+		label=""
+		subLabel=""
+		[isCollapsible]="true"
+		[isCollapsed]="true"
+		expandedLabel="{{ 'advanced-search' | translate}}"
+		collapsedLabel="{{ 'close' | translate}}">
+
+		<h6 class="section-title eui-u-mt-m">Advanced Search</h6>
+
+		<div euiInputGroup>
+		    <label euiLabel for="framework">Select framework</label>
+		    <select euiSelect name="framework" id="framework">
+		        <option value="angular">Angular</option>
+		        <option value="react">React</option>
+		        <option value="vue">Vue</option>
+		    </select>
+		</div>
+
+	</eui-page-header>
+		
+	<eui-page-content>
+
+		<eui-block-content euiLoading="true">
+
+			<table euiTable euiTableResponsive [rows]="documentList.items" *ngIf="documentList?.items">
+
+				<ng-template euiTemplate="header">
+				<tr>
+					<th>{{ 'document.id' | translate }}</th>
+					<th>{{ 'document.name' | translate }}</th>
+					<th>{{ 'document.create-date' | translate }}</th>
+					<th>{{ 'document.last-modified-date' | translate }}</th>
+				</tr>
+				</ng-template>
+
+				<ng-template let-row euiTemplate="body">
+				<tr>
+					<td>{{ row.id }}</td>
+					<td>{{ row.name }}</td>
+					<td>{{ row.createDate }}</td>
+					<td>{{ row.modifiedDate}}</td>
+				</tr>
+				</ng-template>
+			</table>
+		</eui-block-content>
+
+	</eui-page-content>
+
+	 <eui-page-footer>
+		Page footer (optional)
+	</eui-page-footer>
+
+</eui-page>

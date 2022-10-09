@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { APP_INITIALIZER, NgModule } from '@angular/core';
-
+import { ApiModule } from './shared/schematron-client';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CoreModule } from './core/core.module';
@@ -15,8 +15,10 @@ import { AppStarterService } from './app-starter.service';
 		BrowserModule,
 		BrowserAnimationsModule,
 		CoreModule,
+		ApiModule,
 		AppRoutingModule,
 	],
+
 	providers: [
 		AppStarterService,
 		{

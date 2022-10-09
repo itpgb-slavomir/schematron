@@ -52,7 +52,7 @@
 									<artifactId>schematron-api-client-angular</artifactId>
 									<type>jar</type>
 									<overWrite>true</overWrite>
-									<outputDirectory>${project.basedir}/src/app/schematron-client</outputDirectory>
+									<outputDirectory>${project.basedir}/src/app/shared/schematron-client</outputDirectory>
 									<includes>**/*.*</includes>
 
 								</artifactItem>

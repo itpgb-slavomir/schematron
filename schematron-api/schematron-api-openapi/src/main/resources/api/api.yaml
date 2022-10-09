@@ -26,8 +26,6 @@ tags:
 servers:
 -  url: http://localhost:8080
    description: Development server
--  url: http://api.schematron.bishub.cy/v1
-   description: Production server
 
 components:
    securitySchemes:
@@ -35,6 +33,10 @@ components:
          $ref: './components/securitySchemes/BEARER.yaml'
 
 paths:
+   /folder:
+      $ref: './paths/Folder/Folder.yaml'
+   /folder/{FolderName}:
+      $ref: './paths/Folder/FolderList.yaml'
    /document:
       $ref: './paths/Document/DocumentList.yaml'
    /document/{DocumentId}:
@@ -43,3 +45,7 @@ paths:
       $ref: './paths/Namespace/NamespaceList.yaml'
    /namespace/{NamespaceId}:
       $ref: './paths/Namespace/Namespace.yaml'
+   /element:
+      $ref: './paths/Element/ElementList.yaml'
+   /element/{ElementId}:
+      $ref: './paths/Element/Element.yaml'

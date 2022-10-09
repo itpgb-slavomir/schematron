@@ -1,55 +1,56 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
 import {
-    getUserState,
-    UserState,
+	getUserState,
+	UserState,
 } from '@eui/core';
 import { Observable, Subscription } from 'rxjs';
 
 @Component({
-    selector: 'app-root',
-    templateUrl: './app.component.html',
+	selector: 'app-root',
+	templateUrl: './app.component.html',
 })
 export class AppComponent implements OnInit, OnDestroy {
-    userInfos: UserState;
-    // Observe state changes
-    userState: Observable<UserState>;
-    // an array to keep all subscriptions and easily unsubscribe
-    subs: Subscription[] = [];
 
-    sidebarItems = [
-        { label: 'Home', url: 'screen/home', iconClass: 'eui-icon-home' },
-        { label: 'Documents', url: 'screen/module1', iconClass: 'eui-icon-work', children: [
-            { label: 'Browse', url: 'screen/module1/page1' },
-            { label: 'Search', url: 'screen/module1/page2' },
-            { label: 'Create', url: 'screen/module1/page2' },
-            { label: 'Upload', url: 'screen/module1/page2' },
-        ] },
-        { label: 'Namespace', url: 'screen/module2', iconClass: 'eui-icon-work' },
-        { label: 'Elements', url: 'screen/module2', iconClass: 'eui-icon-work' },
-        { label: 'Attributes', url: 'screen/module2', iconClass: 'eui-icon-work' },
-    ];
-    notificationItems = [
-        { label: 'Title label 1', subLabel: 'Subtitle label' },
-        { label: 'Title label 2', subLabel: 'Subtitle label' },
-        { label: 'Title label 3', subLabel: 'Subtitle label' },
-        { label: 'Title label 4', subLabel: 'Subtitle label' },
-    ];
+	userInfos: UserState;
 
-    constructor(
-        private store: Store<any>,
-    ) {
-            this.userState = this.store.select(getUserState);
-            this.subs.push(this.userState.subscribe((user: UserState) => {
-                this.userInfos = { ...user };
-                console.log(user);
-            }));
-    }
+	userState: Observable<UserState>;
 
-    ngOnInit() {
-    }
+	subs: Subscription[] = [];
 
-    ngOnDestroy() {
-        this.subs.forEach((s: Subscription) => s.unsubscribe());
-    }
+	toolbarMenuItems = [
+		{
+			label: 'Documents',
+			url: 'document',
+			iconClass: ''
+		},
+		{
+			label: 'Create',
+			url: 'create',
+			iconClass: 'eui-icon-add'
+		},
+	];
+
+	notificationItems = [
+		{ label: 'Title label 1', subLabel: 'Subtitle label' },
+		{ label: 'Title label 2', subLabel: 'Subtitle label' },
+		{ label: 'Title label 3', subLabel: 'Subtitle label' },
+		{ label: 'Title label 4', subLabel: 'Subtitle label' },
+	];
+
+	constructor(
+		private store: Store<any>,
+	) {
+		this.userState = this.store.select(getUserState);
+		this.subs.push(this.userState.subscribe((user: UserState) => {
+			this.userInfos = { ...user };
+		}));
+	}
+
+	ngOnInit() {
+	}
+
+	ngOnDestroy() {
+		this.subs.forEach((s: Subscription) => s.unsubscribe());
+	}
 }

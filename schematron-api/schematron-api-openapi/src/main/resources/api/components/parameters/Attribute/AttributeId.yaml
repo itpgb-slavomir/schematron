@@ -1,0 +1,7 @@
+name: ElementId
+in: query
+description: Element Id
+required: true
+schema:
+  type: integer
+  format: int64

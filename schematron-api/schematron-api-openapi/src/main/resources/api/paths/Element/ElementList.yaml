@@ -1,0 +1,44 @@
+get:
+  tags:
+  - Element
+  description: Get Element List
+  operationId: getElementList
+  parameters:
+  - $ref:  ../../components/parameters/Page.yaml
+  - $ref:  ../../components/parameters/PageSize.yaml
+  - $ref:  ../../components/parameters/SortBy.yaml
+  - $ref:  ../../components/parameters/SortOrder.yaml
+  responses:
+    '200':
+      $ref: ../../components/responses/Element/ElementList.yaml
+    '400':
+      $ref: ../../components/responses/Error/BadRequest.yaml
+    '403':
+      $ref: ../../components/responses/Error/Unauthorized.yaml
+    '404':
+      $ref: ../../components/responses/Error/NotFound.yaml
+    '500':
+      $ref: ../../components/responses/Error/UnexpectedError.yaml
+    '501':
+      $ref: ../../components/responses/Error/NotImplemented.yaml
+
+put:
+  tags:
+  - Element
+  description: Create Element
+  operationId: createElement
+  requestBody:
+    $ref:  ../../components/requestBodies/Element/Element.yaml
+  responses:
+    '200':
+      $ref: ../../components/responses/Element/Element.yaml
+    '400':
+      $ref: ../../components/responses/Error/BadRequest.yaml
+    '403':
+      $ref: ../../components/responses/Error/Unauthorized.yaml
+    '404':
+      $ref: ../../components/responses/Error/NotFound.yaml
+    '500':
+      $ref: ../../components/responses/Error/UnexpectedError.yaml
+    '501':
+      $ref: ../../components/responses/Error/NotImplemented.yaml

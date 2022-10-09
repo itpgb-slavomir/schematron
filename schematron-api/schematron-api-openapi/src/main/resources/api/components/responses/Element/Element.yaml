@@ -1,0 +1,5 @@
+description: Element Response
+content:
+  application/json:
+    schema:
+      $ref: ../../schemas/Element/Element.yaml

@@ -1,0 +1,62 @@
+get:
+  tags:
+  - Element
+  description: Get Element
+  operationId: getElement
+  parameters:
+  - $ref:  ../../components/parameters/Element/ElementId.yaml
+  responses:
+    '200':
+      $ref: ../../components/responses/Element/Element.yaml
+    '400':
+      $ref: ../../components/responses/Error/BadRequest.yaml
+    '403':
+      $ref: ../../components/responses/Error/Unauthorized.yaml
+    '404':
+      $ref: ../../components/responses/Error/NotFound.yaml
+    '500':
+      $ref: ../../components/responses/Error/UnexpectedError.yaml
+    '501':
+      $ref: ../../components/responses/Error/NotImplemented.yaml
+patch:
+  tags:
+  - Element
+  description: Update Element
+  operationId: updateElement
+  parameters:
+  - $ref:  ../../components/parameters/Element/ElementId.yaml
+  requestBody:
+    $ref:  ../../components/requestBodies/Element/Element.yaml
+  responses:
+    '200':
+      $ref: ../../components/responses/Element/Element.yaml
+    '400':
+      $ref: ../../components/responses/Error/BadRequest.yaml
+    '403':
+      $ref: ../../components/responses/Error/Unauthorized.yaml
+    '404':
+      $ref: ../../components/responses/Error/NotFound.yaml
+    '500':
+      $ref: ../../components/responses/Error/UnexpectedError.yaml
+    '501':
+      $ref: ../../components/responses/Error/NotImplemented.yaml
+delete:
+  tags:
+  - Element
+  description: Delete Element
+  operationId: deleteElement
+  parameters:
+  - $ref:  ../../components/parameters/Element/ElementId.yaml
+  responses:
+    '200':
+      $ref: ../../components/responses/Element/Element.yaml
+    '400':
+      $ref: ../../components/responses/Error/BadRequest.yaml
+    '403':
+      $ref: ../../components/responses/Error/Unauthorized.yaml
+    '404':
+      $ref: ../../components/responses/Error/NotFound.yaml
+    '500':
+      $ref: ../../components/responses/Error/UnexpectedError.yaml
+    '501':
+      $ref: ../../components/responses/Error/NotImplemented.yaml

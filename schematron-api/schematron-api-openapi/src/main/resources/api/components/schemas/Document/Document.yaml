@@ -19,3 +19,9 @@ properties:
   content:
     type: string
     format: blob
+  createDate:
+    type: string
+    format: date-time 
+  modifiedDate:
+    type: string
+    format: date-time 
