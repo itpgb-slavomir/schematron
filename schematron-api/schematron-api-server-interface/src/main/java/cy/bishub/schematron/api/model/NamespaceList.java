@@ -22,7 +22,7 @@ import javax.annotation.Generated;
 /**
  * NamespaceList
  */
-@Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2022-10-15T10:57:25.668838+02:00[Europe/Paris]")
+@Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2022-10-15T10:57:46.642276+02:00[Europe/Paris]")
 // TODO Add x-java-class-annotation
 public class NamespaceList   {
 
