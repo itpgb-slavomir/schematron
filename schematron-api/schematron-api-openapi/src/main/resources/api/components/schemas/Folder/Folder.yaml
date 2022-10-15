@@ -6,6 +6,7 @@ x-java-field-annotations:
 - '@javax.persistence.OneToOne(cascade = javax.persistence.CascadeType.ALL)'
 - '@javax.persistence.JoinColumn(referencedColumnName = "id")'
 properties:
+
   id:
     type: integer
     format: int64
@@ -13,16 +14,35 @@ properties:
     - '@javax.persistence.Id'
     - '@javax.persistence.GeneratedValue( strategy=javax.persistence.GenerationType.AUTO)'
     - '@javax.persistence.Column(columnDefinition = "serial")'
+
   parent:
     x-java-field-annotations:
     - '@javax.persistence.OneToOne(cascade = javax.persistence.CascadeType.ALL,orphanRemoval=true)'
     $ref: ./Folder.yaml
+
   name:
     type: string
     minLength: 1
+
+  children:
+    type: array
+    items:
+      $ref: './Folder.yaml'
+    x-java-field-annotations:
+    - '@javax.persistence.OneToMany(cascade = javax.persistence.CascadeType.ALL,orphanRemoval=true)'
+
+  documents:
+    type: array
+    items:
+      $ref: './../Document/Document.yaml'
+    x-java-field-annotations:
+    - '@javax.persistence.OneToMany(cascade = javax.persistence.CascadeType.ALL,orphanRemoval=true)'
+  
   created:
     type: string
     format: date-time
+
   updated:
     type: string
     format: date-time
+  

@@ -13,9 +13,48 @@ properties:
     - '@javax.persistence.Id'
     - '@javax.persistence.GeneratedValue( strategy=javax.persistence.GenerationType.AUTO)'
     - '@javax.persistence.Column(columnDefinition = "serial")'
+
   name:
     type: string
     minLength: 1
+
   content:
     type: string
     format: blob
+
+  document:
+    x-java-field-annotations:
+    - '@javax.persistence.OneToOne(cascade = javax.persistence.CascadeType.ALL,orphanRemoval=true)'
+    $ref: ./../Document/Document.yaml
+
+  namespace:
+    x-java-field-annotations:
+    - '@javax.persistence.OneToOne(cascade = javax.persistence.CascadeType.ALL,orphanRemoval=true)'
+    $ref: ./../Namespace/Namespace.yaml
+
+  attributes:
+    type: array
+    items:
+      $ref: '../Attribute/Attribute.yaml'
+    x-java-field-annotations:
+    - '@javax.persistence.OneToMany(cascade = javax.persistence.CascadeType.ALL,orphanRemoval=true)'
+
+  parent:
+    x-java-field-annotations:
+    - '@javax.persistence.OneToOne(cascade = javax.persistence.CascadeType.ALL,orphanRemoval=true)'
+    $ref: ./Element.yaml
+
+  children:
+    type: array
+    items:
+      $ref: './Element.yaml'
+    x-java-field-annotations:
+    - '@javax.persistence.OneToMany(cascade = javax.persistence.CascadeType.ALL,orphanRemoval=true)'
+
+  created:
+    type: string
+    format: date-time
+
+  updated:
+    type: string
+    format: date-time

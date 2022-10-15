@@ -13,15 +13,31 @@ properties:
     - '@javax.persistence.Id'
     - '@javax.persistence.GeneratedValue( strategy=javax.persistence.GenerationType.AUTO)'
     - '@javax.persistence.Column(columnDefinition = "serial")'
+
   name:
     type: string
     minLength: 1
+
+  namespaces:
+    type: array
+    items:
+      $ref: '../Namespace/Namespace.yaml'
+    x-java-field-annotations:
+    - '@javax.persistence.OneToMany(cascade = javax.persistence.CascadeType.ALL,orphanRemoval=true)'
+
+  element:
+    x-java-field-annotations:
+    - '@javax.persistence.OneToOne(cascade = javax.persistence.CascadeType.ALL,orphanRemoval=true)'
+    $ref: ./../Element/Element.yaml
+
   content:
     type: string
     format: blob
+
   created:
     type: string
     format: date-time
+
   updated:
     type: string
     format: date-time

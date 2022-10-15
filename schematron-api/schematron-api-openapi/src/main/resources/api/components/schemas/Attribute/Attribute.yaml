@@ -6,6 +6,7 @@ x-java-field-annotations:
 - '@javax.persistence.OneToOne(cascade = javax.persistence.CascadeType.ALL)'
 - '@javax.persistence.JoinColumn(referencedColumnName = "id")'
 properties:
+
   id:
     type: integer
     format: int64
@@ -13,15 +14,29 @@ properties:
     - '@javax.persistence.Id'
     - '@javax.persistence.GeneratedValue( strategy=javax.persistence.GenerationType.AUTO)'
     - '@javax.persistence.Column(columnDefinition = "serial")'
+
   name:
     type: string
     minLength: 1
+
   content:
     type: string
     format: blob
+
+  namespace:
+    x-java-field-annotations:
+    - '@javax.persistence.OneToOne(cascade = javax.persistence.CascadeType.ALL,orphanRemoval=true)'
+    $ref: ./../Namespace/Namespace.yaml
+
+  element:
+    x-java-field-annotations:
+    - '@javax.persistence.OneToOne(cascade = javax.persistence.CascadeType.ALL,orphanRemoval=true)'
+    $ref: ./../Element/Element.yaml
+
   created:
     type: string
     format: date-time
+
   updated:
     type: string
     format: date-time
