@@ -21,32 +21,22 @@ export class AppComponent implements OnInit, OnDestroy {
 	toolbarMenuItems = [
 		{
 			label: 'Dashboard',
-			url: 'dashboard',
+			url: '',
 			iconClass: ''
 		},
 		{
-			label: 'Data',
-			url: 'data',
+			label: 'Documents',
+			url: 'folder',
 			iconClass: ''
 		},
 		{
-			label: 'Reports',
-			url: 'reports',
+			label: 'Jobs',
+			url: 'workflow',
 			iconClass: ''
 		},
 		{
-			label: 'Templates',
-			url: 'templates',
-			iconClass: ''
-		},
-		{
-			label: 'Workflows',
-			url: 'reports',
-			iconClass: ''
-		},
-		{
-			label: 'Admin',
-			url: 'admin',
+			label: 'eUI',
+			url: 'template',
 			iconClass: ''
 		},
 	];

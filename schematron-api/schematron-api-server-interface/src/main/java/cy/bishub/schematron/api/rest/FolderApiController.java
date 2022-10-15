@@ -26,7 +26,7 @@ import java.util.Map;
 import java.util.Optional;
 import javax.annotation.Generated;
 
-@Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2022-10-09T05:17:36.671711+02:00[Europe/Paris]")
+@Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2022-10-15T10:57:25.668838+02:00[Europe/Paris]")
 @Controller
 public class FolderApiController implements FolderApi {
 

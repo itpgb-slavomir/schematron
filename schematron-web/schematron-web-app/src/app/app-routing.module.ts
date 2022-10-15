@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+
 import { DashboardComponent } from './features/dashboard/dashboard.component';
 
 import { SXCreateWizardComponent } from './shared/components/create-wizard/index.component';
@@ -11,16 +12,14 @@ import { SXDocumentDetailComponent } from './shared/components/document/detail/d
 
 import { SXSchemaCreateComponent } from './shared/components/schema/create/create.component';
 
+import { SXFolderBrowseComponent } from './shared/components/folder/browse/browse.component';
+import { SXFolderCreateComponent } from './shared/components/folder/create/create.component';
+import { SXFolderEditComponent } from './shared/components/folder/edit/edit.component';
+
 const routes: Routes = [
 
 	{
 		path: '',
-		redirectTo: 'dashboard',
-		pathMatch: 'full'
-	},
-
-	{
-		path: 'dashboard',
 		component: DashboardComponent
 	},
 
@@ -30,7 +29,7 @@ const routes: Routes = [
 	},
 
 	{
-		path: 'documents',
+		path: 'document',
 		component: SXDocumentBrowseComponent
 	},
 
@@ -50,7 +49,17 @@ const routes: Routes = [
 
 	{
 		path: 'folder/create',
-		component: SXCreateWizardComponent
+		component: SXFolderCreateComponent
+	},
+
+	{
+		path: 'folder/edit',
+		component: SXFolderEditComponent
+	},
+
+	{
+		path: 'folder',
+		component: SXFolderBrowseComponent,
 	},
 
 	{
@@ -59,12 +68,12 @@ const routes: Routes = [
 	},
 
 	{
-		path: 'document/create',
+		path: 'document/new',
 		component: SXDocumentCreateComponent
 	},
 
 	{
-		path: 'schema/create',
+		path: 'document/create',
 		component: SXDocumentEditComponent
 	},
 

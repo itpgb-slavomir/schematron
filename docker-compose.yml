@@ -30,6 +30,19 @@ services:
     networks:
     - schematron
 
+  keycloak:
+    image: quay.io/keycloak/keycloak:19.0.3
+    restart: always
+    ports:
+    - "8081:8080"
+    environment:
+    - KEYCLOAK_ADMIN=admin
+    - KEYCLOAK_ADMIN_PASSWORD=Passw0rd
+    command: start-dev
+    restart: unless-stopped
+    networks:
+    - schematron
+
   api:
      build:
         context: ./schematron-api/schematron-api-server

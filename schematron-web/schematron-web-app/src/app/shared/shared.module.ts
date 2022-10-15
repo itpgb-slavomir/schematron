@@ -17,6 +17,7 @@ import { SXDocumentSearchComponent } from './components/document/search/search.c
 import { SXDocumentUploadComponent } from './components/document/upload/upload.component';
 
 import { SXFolderCreateComponent } from './components/folder/create/create.component';
+import { SXFolderBrowseComponent } from './components/folder/browse/browse.component';
 
 import { SXNamespaceBrowseComponent } from './components/namespace/browse/browse.component';
 import { SXNamespaceCreateComponent } from './components/namespace/create/create.component';
@@ -29,6 +30,7 @@ import { SXSchemaCreateComponent } from './components/schema/create/create.compo
 import { SxSchemaEditComponent } from './components/schema/edit/edit.component';
 import { SxSchemaSearchComponent } from './components/schema/search/search.component';
 import { SxSchemaViewComponent } from './components/schema/view/view.component';
+import { SXFolderEditComponent } from './components/folder/edit/edit.component';
 
 
 @NgModule({
@@ -53,6 +55,8 @@ import { SxSchemaViewComponent } from './components/schema/view/view.component';
 		SXDocumentUploadComponent,
 
 		SXFolderCreateComponent,
+		SXFolderBrowseComponent,
+		SXFolderEditComponent,
 
 		SXNamespaceBrowseComponent,
 		SXNamespaceCreateComponent,
@@ -87,6 +91,8 @@ import { SxSchemaViewComponent } from './components/schema/view/view.component';
 		SXDocumentUploadComponent,
 
 		SXFolderCreateComponent,
+		SXFolderBrowseComponent,
+		SXFolderEditComponent,
 
 		SXNamespaceBrowseComponent,
 		SXNamespaceCreateComponent,
