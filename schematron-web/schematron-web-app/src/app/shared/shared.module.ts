@@ -5,6 +5,7 @@ import { RouterModule } from '@angular/router';
 import { TranslateModule } from '@ngx-translate/core';
 import { UxAllModule } from '@eui/components/legacy';
 import { EuiAllModule } from '@eui/components';
+import { DynamicFormsModule } from '@eui/dynamic-forms';
 import { ApiModule } from './api-client/api.module';
 
 import { SXCreateWizardComponent } from './components/create-wizard/index.component';
@@ -42,6 +43,7 @@ import { SXFolderEditComponent } from './components/folder/edit/edit.component';
 		UxAllModule,
 		EuiAllModule,
 		TranslateModule,
+		DynamicFormsModule,
 		ApiModule,
 	],
 	declarations: [
@@ -79,6 +81,7 @@ import { SXFolderEditComponent } from './components/folder/edit/edit.component';
 		UxAllModule,
 		EuiAllModule,
 		TranslateModule,
+		DynamicFormsModule,
 		ApiModule,
 
 		SXCreateWizardComponent,

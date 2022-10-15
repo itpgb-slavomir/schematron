@@ -43,21 +43,22 @@ services:
     networks:
     - schematron
 
-  api:
-     build:
-        context: ./schematron-api/schematron-api-server
-        dockerfile: Dockerfile
-     volumes:
-     - ./schematron-api/schematron-api-server:/var/www
-     ports:
-     - 8080:8080
-     links:
-     - db
-     - rabbitmq
-     - keycloak
-     restart: unless-stopped
-     networks:
-     - schematron
+#  api:
+#     image: schematron-api-server:0.0.1-SNAPSHOT
+#     build:
+#        context: ./schematron-api/schematron-api-server
+#        dockerfile: Dockerfile
+#     volumes:
+#     - ./schematron-api/schematron-api-server:/var/www
+#     ports:
+#     - 8080:8080
+#     links:
+#     - db
+#     - rabbitmq
+#     - keycloak
+#     restart: unless-stopped
+#     networks:
+#     - schematron
 
   web:
     build:

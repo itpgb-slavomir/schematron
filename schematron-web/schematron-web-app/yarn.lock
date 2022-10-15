@@ -1788,6 +1788,14 @@
     xhr-mock "2.5.1"
     zone.js "0.11.8"
 
+"@eui/dynamic-forms@*":
+  version "14.0.2"
+  resolved "https://registry.yarnpkg.com/@eui/dynamic-forms/-/dynamic-forms-14.0.2.tgz#e5e85ff63bfa1c5f985e54c2abb771865d13203d"
+  integrity sha512-XHA7G5PNasZmMw7Qo3/WZYHyQdYnzJEUY7vhgFnM+1jDxMnw+LnTKUyojiruSJ2ES60LL+kAfmi/2rO85+m5yA==
+  dependencies:
+    jsonpatch "3.0.1"
+    tslib "^2.3.0"
+
 "@eui/showcase@14.0.6":
   version "14.0.6"
   resolved "https://registry.yarnpkg.com/@eui/showcase/-/showcase-14.0.6.tgz#e8da1e50c4395e64f12654ab999c1477831f77e8"
@@ -7981,6 +7989,11 @@ jsonparse@^1.3.1:
   version "1.3.1"
   resolved "https://registry.yarnpkg.com/jsonparse/-/jsonparse-1.3.1.tgz#3f4dae4a91fac315f71062f8521cc239f1366280"
   integrity sha512-POQXvpdL69+CluYsillJ7SUhKvytYjW9vG/GKpnf+xP8UWgYEM/RaMzHHofbALDiKbbP1W8UEYmgGl39WkPZsg==
+
+jsonpatch@3.0.1:
+  version "3.0.1"
+  resolved "https://registry.yarnpkg.com/jsonpatch/-/jsonpatch-3.0.1.tgz#97225367c1c3c5bf1641be59b2f73be19759f06f"
+  integrity sha512-byPijiCKJX674wTgdCy5O5zGDLOfO88muTCJmQs4n293yDrSsnNJqCF17TymtjVBy2x0YMrnZk9LHqGHUPcZVw==
 
 jsrsasign@10.5.27:
   version "10.5.27"

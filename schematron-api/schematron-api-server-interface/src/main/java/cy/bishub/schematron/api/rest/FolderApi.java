@@ -26,7 +26,7 @@ import java.util.List;
 import java.util.Map;
 import javax.annotation.Generated;
 
-@Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2022-10-15T11:50:14.577+02:00[Europe/Paris]")
+@Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2022-10-15T14:14:52.033+02:00[Europe/Paris]")
 @Validated
 @Tag(name = "Folder", description = "the Folder API")
 @RequestMapping("${openapi.Schematron - API - Server - Interface.base-path:}")
@@ -37,7 +37,7 @@ public interface FolderApi {
     }
 
     /**
-     * PUT /folder/{FolderName}
+     * PUT /folder
      * Create Folder
      *
      * @param folder Folder Request Body (required)
@@ -74,7 +74,7 @@ public interface FolderApi {
     )
     @RequestMapping(
         method = RequestMethod.PUT,
-        value = "/folder/{FolderName}",
+        value = "/folder",
         produces = { "application/json" },
         consumes = { "application/json" }
     )
@@ -86,10 +86,10 @@ public interface FolderApi {
 
 
     /**
-     * DELETE /folder
+     * DELETE /folder/{FolderId}
      * Delete Folder
      *
-     * @param folderName Folder Name (required)
+     * @param folderId Folder Id (required)
      * @return Folder Response (status code 200)
      *         or Bad request. (status code 400)
      *         or Authorization information is missing or invalid. (status code 403)
@@ -123,21 +123,21 @@ public interface FolderApi {
     )
     @RequestMapping(
         method = RequestMethod.DELETE,
-        value = "/folder",
+        value = "/folder/{FolderId}",
         produces = { "application/json" }
     )
     default ResponseEntity<Folder> deleteFolder(
-        @NotNull @Parameter(name = "FolderName", description = "Folder Name", required = true) @Valid @RequestParam(value = "FolderName", required = true) String folderName
+        @NotNull @Parameter(name = "FolderId", description = "Folder Id", required = true) @Valid @RequestParam(value = "FolderId", required = true) Long folderId
     ) {
-        return getDelegate().deleteFolder(folderName);
+        return getDelegate().deleteFolder(folderId);
     }
 
 
     /**
-     * GET /folder
+     * GET /folder/{FolderId}
      * Get Folder
      *
-     * @param folderName Folder Name (required)
+     * @param folderId Folder Id (required)
      * @return Folder Response (status code 200)
      *         or Bad request. (status code 400)
      *         or Authorization information is missing or invalid. (status code 403)
@@ -171,18 +171,18 @@ public interface FolderApi {
     )
     @RequestMapping(
         method = RequestMethod.GET,
-        value = "/folder",
+        value = "/folder/{FolderId}",
         produces = { "application/json" }
     )
     default ResponseEntity<Folder> getFolder(
-        @NotNull @Parameter(name = "FolderName", description = "Folder Name", required = true) @Valid @RequestParam(value = "FolderName", required = true) String folderName
+        @NotNull @Parameter(name = "FolderId", description = "Folder Id", required = true) @Valid @RequestParam(value = "FolderId", required = true) Long folderId
     ) {
-        return getDelegate().getFolder(folderName);
+        return getDelegate().getFolder(folderId);
     }
 
 
     /**
-     * GET /folder/{FolderName}
+     * GET /folder
      * Get Folder List
      *
      * @param page Page (optional, default to 1)
@@ -222,7 +222,7 @@ public interface FolderApi {
     )
     @RequestMapping(
         method = RequestMethod.GET,
-        value = "/folder/{FolderName}",
+        value = "/folder",
         produces = { "application/json" }
     )
     default ResponseEntity<FolderList> getFolderList(
@@ -236,10 +236,10 @@ public interface FolderApi {
 
 
     /**
-     * PATCH /folder
+     * PATCH /folder/{FolderId}
      * Update Folder
      *
-     * @param folderName Folder Name (required)
+     * @param folderId Folder Id (required)
      * @param folder Folder Request Body (required)
      * @return Folder Response (status code 200)
      *         or Bad request. (status code 400)
@@ -274,15 +274,15 @@ public interface FolderApi {
     )
     @RequestMapping(
         method = RequestMethod.PATCH,
-        value = "/folder",
+        value = "/folder/{FolderId}",
         produces = { "application/json" },
         consumes = { "application/json" }
     )
     default ResponseEntity<Folder> updateFolder(
-        @NotNull @Parameter(name = "FolderName", description = "Folder Name", required = true) @Valid @RequestParam(value = "FolderName", required = true) String folderName,
+        @NotNull @Parameter(name = "FolderId", description = "Folder Id", required = true) @Valid @RequestParam(value = "FolderId", required = true) Long folderId,
         @Parameter(name = "Folder", description = "Folder Request Body", required = true) @Valid @RequestBody Folder folder
     ) {
-        return getDelegate().updateFolder(folderName, folder);
+        return getDelegate().updateFolder(folderId, folder);
     }
 
 }

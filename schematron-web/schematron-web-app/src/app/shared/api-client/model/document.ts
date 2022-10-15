@@ -18,6 +18,6 @@ export class Document {
     id?: number;
     name?: string;
     content?: string;
-    createDate?: string;
-    modifiedDate?: string;
+    created?: string;
+    updated?: string;
 }

@@ -34,9 +34,9 @@ components:
 
 paths:
    /folder:
-      $ref: './paths/Folder/Folder.yaml'
-   /folder/{FolderName}:
       $ref: './paths/Folder/FolderList.yaml'
+   /folder/{FolderId}:
+      $ref: './paths/Folder/Folder.yaml'
    /document:
       $ref: './paths/Document/DocumentList.yaml'
    /document/{DocumentId}:
@@ -49,3 +49,7 @@ paths:
       $ref: './paths/Element/ElementList.yaml'
    /element/{ElementId}:
       $ref: './paths/Element/Element.yaml'
+   /attribute:
+      $ref: './paths/Attribute/AttributeList.yaml'
+   /attribute/{AttributeId}:
+      $ref: './paths/Attribute/Attribute.yaml'

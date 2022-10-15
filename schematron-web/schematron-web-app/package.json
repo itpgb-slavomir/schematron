@@ -20,6 +20,7 @@
     },
     "private": true,
     "dependencies": {
-        "@eui/deps-base": "14.0.6"
+        "@eui/deps-base": "14.0.6",
+        "@eui/dynamic-forms": "*"
     }
 }

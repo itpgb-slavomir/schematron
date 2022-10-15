@@ -22,7 +22,7 @@ import javax.annotation.Generated;
 /**
  * ElementList
  */
-@Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2022-10-15T11:50:14.577+02:00[Europe/Paris]")
+@Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2022-10-15T14:14:52.033+02:00[Europe/Paris]")
 // TODO Add x-java-class-annotation
 public class ElementList   {
 

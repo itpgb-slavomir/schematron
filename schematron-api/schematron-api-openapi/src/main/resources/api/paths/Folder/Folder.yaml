@@ -4,7 +4,7 @@ get:
   description: Get Folder
   operationId: getFolder
   parameters:
-  - $ref:  ../../components/parameters/Folder/FolderName.yaml
+  - $ref:  ../../components/parameters/Folder/FolderId.yaml
   responses:
     '200':
       $ref: ../../components/responses/Folder/Folder.yaml
@@ -24,7 +24,7 @@ patch:
   description: Update Folder
   operationId: updateFolder
   parameters:
-  - $ref:  ../../components/parameters/Folder/FolderName.yaml
+  - $ref:  ../../components/parameters/Folder/FolderId.yaml
   requestBody:
     $ref:  ../../components/requestBodies/Folder/Folder.yaml
   responses:
@@ -46,7 +46,7 @@ delete:
   description: Delete Folder
   operationId: deleteFolder
   parameters:
-  - $ref:  ../../components/parameters/Folder/FolderName.yaml
+  - $ref:  ../../components/parameters/Folder/FolderId.yaml
   responses:
     '200':
       $ref: ../../components/responses/Folder/Folder.yaml

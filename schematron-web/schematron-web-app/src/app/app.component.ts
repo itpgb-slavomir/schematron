@@ -21,31 +21,19 @@ export class AppComponent implements OnInit, OnDestroy {
 	toolbarMenuItems = [
 		{
 			label: 'Dashboard',
-			url: '',
+			url: ['', 'dashboard'],
 			iconClass: ''
 		},
 		{
 			label: 'Documents',
-			url: 'folder',
+			url: ['', 'folder'],
 			iconClass: ''
 		},
 		{
 			label: 'Jobs',
-			url: 'workflow',
+			url: ['', 'workflow'],
 			iconClass: ''
 		},
-		{
-			label: 'eUI',
-			url: 'template',
-			iconClass: ''
-		},
-	];
-
-	notificationItems = [
-		{ label: 'Title label 1', subLabel: 'Subtitle label' },
-		{ label: 'Title label 2', subLabel: 'Subtitle label' },
-		{ label: 'Title label 3', subLabel: 'Subtitle label' },
-		{ label: 'Title label 4', subLabel: 'Subtitle label' },
 	];
 
 	constructor(

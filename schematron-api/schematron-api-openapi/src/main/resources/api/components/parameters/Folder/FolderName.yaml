@@ -1,6 +1,0 @@
-name: FolderName
-in: query
-description: Folder Name
-required: true
-schema:
-  type: string

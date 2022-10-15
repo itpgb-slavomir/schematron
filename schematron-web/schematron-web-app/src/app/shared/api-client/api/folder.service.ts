@@ -143,7 +143,7 @@ export class FolderService {
             }
         }
 
-        return this.httpClient.put<Folder>(`${this.configuration.basePath}/folder/`,
+        return this.httpClient.put<Folder>(`${this.configuration.basePath}/folder`,
             {
                 responseType: <any>responseType_,
                 withCredentials: this.configuration.withCredentials,
@@ -156,22 +156,22 @@ export class FolderService {
 
     /**
      * Delete Folder
-     * @param folderName Folder Name
+     * @param folderId Folder Id
      * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
      * @param reportProgress flag to report request and response progress.
      */
-    public deleteFolder(folderName: string, observe?: 'body', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext}): Observable<Folder>;
-    public deleteFolder(folderName: string, observe?: 'response', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext}): Observable<HttpResponse<Folder>>;
-    public deleteFolder(folderName: string, observe?: 'events', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext}): Observable<HttpEvent<Folder>>;
-    public deleteFolder(folderName: string, observe: any = 'body', reportProgress: boolean = false, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext}): Observable<any> {
-        if (folderName === null || folderName === undefined) {
-            throw new Error('Required parameter folderName was null or undefined when calling deleteFolder.');
+    public deleteFolder(folderId: number, observe?: 'body', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext}): Observable<Folder>;
+    public deleteFolder(folderId: number, observe?: 'response', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext}): Observable<HttpResponse<Folder>>;
+    public deleteFolder(folderId: number, observe?: 'events', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext}): Observable<HttpEvent<Folder>>;
+    public deleteFolder(folderId: number, observe: any = 'body', reportProgress: boolean = false, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext}): Observable<any> {
+        if (folderId === null || folderId === undefined) {
+            throw new Error('Required parameter folderId was null or undefined when calling deleteFolder.');
         }
 
         let localVarQueryParameters = new HttpParams({encoder: this.encoder});
-        if (folderName !== undefined && folderName !== null) {
+        if (folderId !== undefined && folderId !== null) {
           localVarQueryParameters = this.addToHttpParams(localVarQueryParameters,
-            <any>folderName, 'FolderName');
+            <any>folderId, 'FolderId');
         }
 
         let localVarHeaders = this.defaultHeaders;
@@ -205,7 +205,7 @@ export class FolderService {
             }
         }
 
-        return this.httpClient.delete<Folder>(`${this.configuration.basePath}/folder`,
+        return this.httpClient.delete<Folder>(`${this.configuration.basePath}/folder/`,
             {
                 params: localVarQueryParameters,
                 responseType: <any>responseType_,
@@ -219,22 +219,22 @@ export class FolderService {
 
     /**
      * Get Folder
-     * @param folderName Folder Name
+     * @param folderId Folder Id
      * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
      * @param reportProgress flag to report request and response progress.
      */
-    public getFolder(folderName: string, observe?: 'body', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext}): Observable<Folder>;
-    public getFolder(folderName: string, observe?: 'response', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext}): Observable<HttpResponse<Folder>>;
-    public getFolder(folderName: string, observe?: 'events', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext}): Observable<HttpEvent<Folder>>;
-    public getFolder(folderName: string, observe: any = 'body', reportProgress: boolean = false, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext}): Observable<any> {
-        if (folderName === null || folderName === undefined) {
-            throw new Error('Required parameter folderName was null or undefined when calling getFolder.');
+    public getFolder(folderId: number, observe?: 'body', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext}): Observable<Folder>;
+    public getFolder(folderId: number, observe?: 'response', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext}): Observable<HttpResponse<Folder>>;
+    public getFolder(folderId: number, observe?: 'events', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext}): Observable<HttpEvent<Folder>>;
+    public getFolder(folderId: number, observe: any = 'body', reportProgress: boolean = false, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext}): Observable<any> {
+        if (folderId === null || folderId === undefined) {
+            throw new Error('Required parameter folderId was null or undefined when calling getFolder.');
         }
 
         let localVarQueryParameters = new HttpParams({encoder: this.encoder});
-        if (folderName !== undefined && folderName !== null) {
+        if (folderId !== undefined && folderId !== null) {
           localVarQueryParameters = this.addToHttpParams(localVarQueryParameters,
-            <any>folderName, 'FolderName');
+            <any>folderId, 'FolderId');
         }
 
         let localVarHeaders = this.defaultHeaders;
@@ -268,7 +268,7 @@ export class FolderService {
             }
         }
 
-        return this.httpClient.get<Folder>(`${this.configuration.basePath}/folder`,
+        return this.httpClient.get<Folder>(`${this.configuration.basePath}/folder/`,
             {
                 params: localVarQueryParameters,
                 responseType: <any>responseType_,
@@ -343,7 +343,7 @@ export class FolderService {
             }
         }
 
-        return this.httpClient.get<FolderList>(`${this.configuration.basePath}/folder/`,
+        return this.httpClient.get<FolderList>(`${this.configuration.basePath}/folder`,
             {
                 params: localVarQueryParameters,
                 responseType: <any>responseType_,
@@ -357,26 +357,26 @@ export class FolderService {
 
     /**
      * Update Folder
-     * @param folderName Folder Name
+     * @param folderId Folder Id
      * @param folder Folder Request Body
      * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
      * @param reportProgress flag to report request and response progress.
      */
-    public updateFolder(folderName: string, folder: Folder, observe?: 'body', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext}): Observable<Folder>;
-    public updateFolder(folderName: string, folder: Folder, observe?: 'response', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext}): Observable<HttpResponse<Folder>>;
-    public updateFolder(folderName: string, folder: Folder, observe?: 'events', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext}): Observable<HttpEvent<Folder>>;
-    public updateFolder(folderName: string, folder: Folder, observe: any = 'body', reportProgress: boolean = false, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext}): Observable<any> {
-        if (folderName === null || folderName === undefined) {
-            throw new Error('Required parameter folderName was null or undefined when calling updateFolder.');
+    public updateFolder(folderId: number, folder: Folder, observe?: 'body', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext}): Observable<Folder>;
+    public updateFolder(folderId: number, folder: Folder, observe?: 'response', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext}): Observable<HttpResponse<Folder>>;
+    public updateFolder(folderId: number, folder: Folder, observe?: 'events', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext}): Observable<HttpEvent<Folder>>;
+    public updateFolder(folderId: number, folder: Folder, observe: any = 'body', reportProgress: boolean = false, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext}): Observable<any> {
+        if (folderId === null || folderId === undefined) {
+            throw new Error('Required parameter folderId was null or undefined when calling updateFolder.');
         }
         if (folder === null || folder === undefined) {
             throw new Error('Required parameter folder was null or undefined when calling updateFolder.');
         }
 
         let localVarQueryParameters = new HttpParams({encoder: this.encoder});
-        if (folderName !== undefined && folderName !== null) {
+        if (folderId !== undefined && folderId !== null) {
           localVarQueryParameters = this.addToHttpParams(localVarQueryParameters,
-            <any>folderName, 'FolderName');
+            <any>folderId, 'FolderId');
         }
 
         let localVarHeaders = this.defaultHeaders;
@@ -419,7 +419,7 @@ export class FolderService {
             }
         }
 
-        return this.httpClient.patch<Folder>(`${this.configuration.basePath}/folder`,
+        return this.httpClient.patch<Folder>(`${this.configuration.basePath}/folder/`,
             {
                 params: localVarQueryParameters,
                 responseType: <any>responseType_,

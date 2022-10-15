@@ -13,7 +13,7 @@ import cy.bishub.schematron.api.rest.NamespaceApiDelegate;
 import cy.bishub.schematron.api.utils.PageableUtil;
 
 @Service
-public class NamespaceImpl implements NamespaceApiDelegate {
+public class NamespaceController implements NamespaceApiDelegate {
 
 	private NamespaceRepository repository;
 

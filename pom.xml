@@ -148,18 +148,6 @@
 			</dependency>
 
 			<dependency>
-				<groupId>io.springfox</groupId>
-				<artifactId>springfox-swagger2</artifactId>
-				<version>${springfox.version}</version>
-			</dependency>
-
-			<dependency>
-				<groupId>io.springfox</groupId>
-				<artifactId>springfox-swagger-ui</artifactId>
-				<version>${springfox.version}</version>
-			</dependency>
-
-			<dependency>
 				<groupId>org.threeten</groupId>
 				<artifactId>threetenbp</artifactId>
 				<version>${threetenbp.version}</version>
@@ -181,12 +169,6 @@
 				<groupId>javax.validation</groupId>
 				<artifactId>validation-api</artifactId>
 				<version>${validation-api.version}</version>
-			</dependency>
-
-			<dependency>
-				<groupId>us.fatehi</groupId>
-				<artifactId>creditcardnumber</artifactId>
-				<version>${creditcardnumber.version}</version>
 			</dependency>
 
 		</dependencies>

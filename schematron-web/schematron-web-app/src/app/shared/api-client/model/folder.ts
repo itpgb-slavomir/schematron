@@ -16,5 +16,8 @@
  */
 export class Folder { 
     id?: number;
+    parent?: Folder;
     name?: string;
+    created?: string;
+    updated?: string;
 }

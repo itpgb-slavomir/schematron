@@ -22,7 +22,7 @@ import javax.annotation.Generated;
  * Document Model
  */
 @ApiModel(description = "Document Model")
-@Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2022-10-15T11:50:14.577+02:00[Europe/Paris]")
+@Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2022-10-15T14:14:52.033+02:00[Europe/Paris]")
 @javax.persistence.Entity(name="Document")
 public class Document   {
 
@@ -42,16 +42,16 @@ public class Document   {
   private String content;
 
   
-  @JsonProperty("createDate")
+  @JsonProperty("created")
   @org.springframework.format.annotation.DateTimeFormat(iso = org.springframework.format.annotation.DateTimeFormat.ISO.DATE_TIME)
   
-  private OffsetDateTime createDate;
+  private OffsetDateTime created;
 
   
-  @JsonProperty("modifiedDate")
+  @JsonProperty("updated")
   @org.springframework.format.annotation.DateTimeFormat(iso = org.springframework.format.annotation.DateTimeFormat.ISO.DATE_TIME)
   
-  private OffsetDateTime modifiedDate;
+  private OffsetDateTime updated;
 
   public Document id(Long id) {
     this.id = id;
@@ -107,40 +107,40 @@ public class Document   {
     this.content = content;
   }
 
-  public Document createDate(OffsetDateTime createDate) {
-    this.createDate = createDate;
+  public Document created(OffsetDateTime created) {
+    this.created = created;
     return this;
   }
 
   /**
-   * Get createDate
-   * @return createDate
+   * Get created
+   * @return created
   */
   @ApiModelProperty(value = "")
-@Valid   public OffsetDateTime getCreateDate() {
-    return createDate;
+@Valid   public OffsetDateTime getCreated() {
+    return created;
   }
 
-  public void setCreateDate(OffsetDateTime createDate) {
-    this.createDate = createDate;
+  public void setCreated(OffsetDateTime created) {
+    this.created = created;
   }
 
-  public Document modifiedDate(OffsetDateTime modifiedDate) {
-    this.modifiedDate = modifiedDate;
+  public Document updated(OffsetDateTime updated) {
+    this.updated = updated;
     return this;
   }
 
   /**
-   * Get modifiedDate
-   * @return modifiedDate
+   * Get updated
+   * @return updated
   */
   @ApiModelProperty(value = "")
-@Valid   public OffsetDateTime getModifiedDate() {
-    return modifiedDate;
+@Valid   public OffsetDateTime getUpdated() {
+    return updated;
   }
 
-  public void setModifiedDate(OffsetDateTime modifiedDate) {
-    this.modifiedDate = modifiedDate;
+  public void setUpdated(OffsetDateTime updated) {
+    this.updated = updated;
   }
 
 
@@ -156,13 +156,13 @@ public class Document   {
     return Objects.equals(this.id, document.id) &&
         Objects.equals(this.name, document.name) &&
         Objects.equals(this.content, document.content) &&
-        Objects.equals(this.createDate, document.createDate) &&
-        Objects.equals(this.modifiedDate, document.modifiedDate);
+        Objects.equals(this.created, document.created) &&
+        Objects.equals(this.updated, document.updated);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, content, createDate, modifiedDate);
+    return Objects.hash(id, name, content, created, updated);
   }
 
   @Override
@@ -173,8 +173,8 @@ public class Document   {
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    content: ").append(toIndentedString(content)).append("\n");
-    sb.append("    createDate: ").append(toIndentedString(createDate)).append("\n");
-    sb.append("    modifiedDate: ").append(toIndentedString(modifiedDate)).append("\n");
+    sb.append("    created: ").append(toIndentedString(created)).append("\n");
+    sb.append("    updated: ").append(toIndentedString(updated)).append("\n");
     sb.append("}");
     return sb.toString();
   }

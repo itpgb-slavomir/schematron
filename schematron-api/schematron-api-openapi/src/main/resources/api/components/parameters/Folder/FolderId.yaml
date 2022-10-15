@@ -1,6 +1,6 @@
-name: AttributeId
+name: FolderId
 in: query
-description: Attribute Id
+description: Folder Id
 required: true
 schema:
   type: integer
