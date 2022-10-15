@@ -1,34 +1,13 @@
 <eui-page>
 
-	<eui-page-header 
-		label=""
-		subLabel="">
-
-		<eui-page-header-action-items>
-
-			<button euiButton euiPrimary
-				[euiDisabled]="true">
-				<span euiIcon iconClass="eui-icon eui-icon-bars"></span>
-			</button>
-
-			<button euiButton euiIconButton
-				[euiDisabled]="false">
-				<span euiIcon iconClass="eui-icon eui-icon-grid"></span>
-			</button>
-
-			<a euiButton euiPrimary [routerLink]="['', 'upload']">{{ 'upload' | translate}}</a>
-			<a euiButton euiPrimary [routerLink]="['', 'folder', 'edit']">{{ 'create-folder-title' | translate}}</a>
-			<a euiButton euiPrimary [routerLink]="['', 'document', 'create']">{{ 'create-document-title' | translate}}</a>
-
-		</eui-page-header-action-items>
-
-	</eui-page-header>
+	<sx-header></sx-header>
 
 	<eui-page-content>
 
-		<eui-block-content euiLoading="true">
+		<eui-block-content euiLoading="euiLoading">
 
 			<ng-template *ngIf="mode=='table'">
+
 				<table euiTable euiTableResponsive [rows]="documentList.items">
 					<ng-template euiTemplate="header">
 					<tr>
@@ -47,12 +26,13 @@
 					</tr>
 					</ng-template>
 				</table>
+
 			</ng-template>
+
 		</eui-block-content>
 
 	</eui-page-content>
 
-	<eui-page-footer>
-	</eui-page-footer>
+	<eui-page-footer></eui-page-footer>
 
 </eui-page>

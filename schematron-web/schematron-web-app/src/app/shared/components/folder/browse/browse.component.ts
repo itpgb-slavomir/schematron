@@ -12,6 +12,8 @@ export class SXFolderBrowseComponent implements OnInit {
 
 	public mode: string = 'table';
 
+	public euiLoading: boolean = false;
+
 	public documentList: DocumentList = new DocumentList();
 
 	constructor(private service: FolderService) { }
@@ -21,13 +23,29 @@ export class SXFolderBrowseComponent implements OnInit {
 	}
 
 	private load(): void {
+		this.euiLoading = true;
+
 		let promises = [];
 
-		promises.push(this.service.getFolderList().toPromise().then((response) => {
-			this.documentList = response;
-		}));
+		promises.push(this.service.getFolderList()
+			.toPromise()
+			.then((response) => {
+				this.documentList = response;
+			}));
 
-		Promise.all(promises).then((response) => { }).catch((error) => console.log(error));
+		Promise.all(promises)
+
+			.then((response) => {
+				console.log(response);
+			})
+
+			.catch((error) => {
+				console.log(error)
+			})
+
+			.finally(() => {
+				this.euiLoading = false;
+			});
 	}
 
 }
