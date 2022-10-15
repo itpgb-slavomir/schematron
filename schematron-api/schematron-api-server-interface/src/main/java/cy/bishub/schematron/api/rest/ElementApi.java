@@ -26,7 +26,7 @@ import java.util.List;
 import java.util.Map;
 import javax.annotation.Generated;
 
-@Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2022-10-15T10:57:46.642276+02:00[Europe/Paris]")
+@Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2022-10-15T11:25:37.110121+02:00[Europe/Paris]")
 @Validated
 @Tag(name = "Element", description = "Element operations")
 @RequestMapping("${openapi.Schematron - API - Server - Interface.base-path:}")

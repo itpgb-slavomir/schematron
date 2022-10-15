@@ -48,12 +48,13 @@ services:
         context: ./schematron-api/schematron-api-server
         dockerfile: Dockerfile
      volumes:
-     - ./schematron-api/schematron-server:/var/www
-#     ports:
-#     - 8080:8080
+     - ./schematron-api/schematron-api-server:/var/www
+     ports:
+     - 8080:8080
      links:
      - db
      - rabbitmq
+     - keycloak
      restart: unless-stopped
      networks:
      - schematron
@@ -62,13 +63,10 @@ services:
     build:
        context: ./schematron-web/schematron-web-app
        dockerfile: Dockerfile
-    restart: always
     volumes:
     - ./schematron-web/schematron-web-app:/var/www
     ports:
     - 4200:4200
-#     links:
-#     - api
     restart: unless-stopped
     networks:
     - schematron
@@ -77,6 +75,8 @@ volumes:
    db:
       driver: local
    web:
+      driver: local
+   api:
       driver: local
 
 networks:

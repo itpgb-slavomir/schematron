@@ -1,6 +1,6 @@
 Manifest-Version: 1.0
 Archiver-Version: Plexus Archiver
+Created-By: Apache Maven 3.8.4
 Built-By: s4dad\sidorsl
-Created-By: Apache Maven 3.8.6
-Build-Jdk: 1.8.0_332
+Build-Jdk: 11.0.13
 
