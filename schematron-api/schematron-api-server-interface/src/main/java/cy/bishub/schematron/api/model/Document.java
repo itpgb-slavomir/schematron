@@ -22,7 +22,7 @@ import javax.annotation.Generated;
  * Document Model
  */
 @ApiModel(description = "Document Model")
-@Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2022-10-15T11:25:37.110121+02:00[Europe/Paris]")
+@Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2022-10-15T11:50:14.577+02:00[Europe/Paris]")
 @javax.persistence.Entity(name="Document")
 public class Document   {
 

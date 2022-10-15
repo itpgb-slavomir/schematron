@@ -20,7 +20,7 @@ import javax.annotation.Generated;
  * Element Model
  */
 @ApiModel(description = "Element Model")
-@Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2022-10-15T11:25:37.110121+02:00[Europe/Paris]")
+@Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2022-10-15T11:50:14.577+02:00[Europe/Paris]")
 @javax.persistence.Entity(name="Element")
 public class Element   {
 

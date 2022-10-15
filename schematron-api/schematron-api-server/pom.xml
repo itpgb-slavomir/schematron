@@ -13,7 +13,7 @@
 	<name>Schematron - API - Server</name>
 
 	<properties>
-		<environment.postgresql.host>localhost</environment.postgresql.host>
+		<environment.postgresql.host>db</environment.postgresql.host>
 		<environment.postgresql.port>5432</environment.postgresql.port>
 		<environment.postgresql.database>schematron</environment.postgresql.database>
 		<environment.postgresql.user>postgres</environment.postgresql.user>
@@ -22,6 +22,24 @@
 	</properties>
 
 	<dependencies>
+
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-dependencies</artifactId>
+			<version>${spring-boot-dependencies.version}</version>
+			<type>pom</type>
+			<scope>import</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>io.springfox</groupId>
+			<artifactId>springfox-swagger2</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>io.springfox</groupId>
+			<artifactId>springfox-swagger-ui</artifactId>
+		</dependency>
 
 		<dependency>
 			<groupId>org.springdoc</groupId>
@@ -91,16 +109,6 @@
 		<dependency>
 			<groupId>com.brsanthu</groupId>
 			<artifactId>migbase64</artifactId>
-		</dependency>
-
-		<dependency>
-			<groupId>io.springfox</groupId>
-			<artifactId>springfox-swagger2</artifactId>
-		</dependency>
-
-		<dependency>
-			<groupId>io.springfox</groupId>
-			<artifactId>springfox-swagger-ui</artifactId>
 		</dependency>
 
 		<dependency>
