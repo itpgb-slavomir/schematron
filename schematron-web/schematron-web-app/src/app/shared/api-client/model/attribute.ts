@@ -9,6 +9,8 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
+import { Element } from './element';
+import { Namespace } from './namespace';
 
 
 /**
@@ -18,6 +20,8 @@ export class Attribute {
     id?: number;
     name?: string;
     content?: string;
+    namespace?: Namespace;
+    element?: Element;
     created?: string;
     updated?: string;
 }

@@ -9,6 +9,8 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
+import { Element } from './element';
+import { Namespace } from './namespace';
 
 
 /**
@@ -17,6 +19,8 @@
 export class Document { 
     id?: number;
     name?: string;
+    namespaces?: Array<Namespace>;
+    element?: Element;
     content?: string;
     created?: string;
     updated?: string;

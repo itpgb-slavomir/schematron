@@ -4,6 +4,8 @@ import java.net.URI;
 import java.util.Objects;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
+import cy.bishub.schematron.api.model.Element;
+import cy.bishub.schematron.api.model.Namespace;
 import java.time.OffsetDateTime;
 import org.springframework.format.annotation.DateTimeFormat;
 import org.openapitools.jackson.nullable.JsonNullable;
@@ -22,7 +24,7 @@ import javax.annotation.Generated;
  * Attribute Model
  */
 @ApiModel(description = "Attribute Model")
-@Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2022-10-15T14:14:52.033+02:00[Europe/Paris]")
+@Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2022-10-15T15:13:55.822+02:00[Europe/Paris]")
 @javax.persistence.Entity(name="Attribute")
 public class Attribute   {
 
@@ -40,6 +42,16 @@ public class Attribute   {
   @JsonProperty("content")
   
   private String content;
+
+  @javax.persistence.OneToOne(cascade = javax.persistence.CascadeType.ALL)@javax.persistence.JoinColumn(referencedColumnName = "id")
+  @JsonProperty("namespace")
+  
+  private Namespace namespace;
+
+  @javax.persistence.OneToOne(cascade = javax.persistence.CascadeType.ALL)@javax.persistence.JoinColumn(referencedColumnName = "id")
+  @JsonProperty("element")
+  
+  private Element element;
 
   
   @JsonProperty("created")
@@ -107,6 +119,42 @@ public class Attribute   {
     this.content = content;
   }
 
+  public Attribute namespace(Namespace namespace) {
+    this.namespace = namespace;
+    return this;
+  }
+
+  /**
+   * Get namespace
+   * @return namespace
+  */
+  @ApiModelProperty(value = "")
+@Valid   public Namespace getNamespace() {
+    return namespace;
+  }
+
+  public void setNamespace(Namespace namespace) {
+    this.namespace = namespace;
+  }
+
+  public Attribute element(Element element) {
+    this.element = element;
+    return this;
+  }
+
+  /**
+   * Get element
+   * @return element
+  */
+  @ApiModelProperty(value = "")
+@Valid   public Element getElement() {
+    return element;
+  }
+
+  public void setElement(Element element) {
+    this.element = element;
+  }
+
   public Attribute created(OffsetDateTime created) {
     this.created = created;
     return this;
@@ -156,13 +204,15 @@ public class Attribute   {
     return Objects.equals(this.id, attribute.id) &&
         Objects.equals(this.name, attribute.name) &&
         Objects.equals(this.content, attribute.content) &&
+        Objects.equals(this.namespace, attribute.namespace) &&
+        Objects.equals(this.element, attribute.element) &&
         Objects.equals(this.created, attribute.created) &&
         Objects.equals(this.updated, attribute.updated);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, content, created, updated);
+    return Objects.hash(id, name, content, namespace, element, created, updated);
   }
 
   @Override
@@ -173,6 +223,8 @@ public class Attribute   {
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    content: ").append(toIndentedString(content)).append("\n");
+    sb.append("    namespace: ").append(toIndentedString(namespace)).append("\n");
+    sb.append("    element: ").append(toIndentedString(element)).append("\n");
     sb.append("    created: ").append(toIndentedString(created)).append("\n");
     sb.append("    updated: ").append(toIndentedString(updated)).append("\n");
     sb.append("}");

@@ -4,7 +4,10 @@ import java.net.URI;
 import java.util.Objects;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
+import cy.bishub.schematron.api.model.Document;
 import java.time.OffsetDateTime;
+import java.util.ArrayList;
+import java.util.List;
 import org.springframework.format.annotation.DateTimeFormat;
 import org.openapitools.jackson.nullable.JsonNullable;
 import java.time.OffsetDateTime;
@@ -22,7 +25,7 @@ import javax.annotation.Generated;
  * Folder Model
  */
 @ApiModel(description = "Folder Model")
-@Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2022-10-15T14:14:52.033+02:00[Europe/Paris]")
+@Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2022-10-15T15:13:55.822+02:00[Europe/Paris]")
 @javax.persistence.Entity(name="Folder")
 public class Folder   {
 
@@ -40,6 +43,20 @@ public class Folder   {
   @JsonProperty("name")
   
   private String name;
+
+  @javax.persistence.OneToMany(cascade = javax.persistence.CascadeType.ALL,orphanRemoval=true)
+  @JsonProperty("children")
+  @Valid
+  
+  
+  private List<Folder> children = null;
+
+  @javax.persistence.OneToMany(cascade = javax.persistence.CascadeType.ALL,orphanRemoval=true)
+  @JsonProperty("documents")
+  @Valid
+  
+  
+  private List<Document> documents = null;
 
   
   @JsonProperty("created")
@@ -107,6 +124,58 @@ public class Folder   {
     this.name = name;
   }
 
+  public Folder children(List<Folder> children) {
+    this.children = children;
+    return this;
+  }
+
+  public Folder addChildrenItem(Folder childrenItem) {
+    if (this.children == null) {
+      this.children = new ArrayList<>();
+    }
+    this.children.add(childrenItem);
+    return this;
+  }
+
+  /**
+   * Get children
+   * @return children
+  */
+  @ApiModelProperty(value = "")
+@Valid   public List<Folder> getChildren() {
+    return children;
+  }
+
+  public void setChildren(List<Folder> children) {
+    this.children = children;
+  }
+
+  public Folder documents(List<Document> documents) {
+    this.documents = documents;
+    return this;
+  }
+
+  public Folder addDocumentsItem(Document documentsItem) {
+    if (this.documents == null) {
+      this.documents = new ArrayList<>();
+    }
+    this.documents.add(documentsItem);
+    return this;
+  }
+
+  /**
+   * Get documents
+   * @return documents
+  */
+  @ApiModelProperty(value = "")
+@Valid   public List<Document> getDocuments() {
+    return documents;
+  }
+
+  public void setDocuments(List<Document> documents) {
+    this.documents = documents;
+  }
+
   public Folder created(OffsetDateTime created) {
     this.created = created;
     return this;
@@ -156,13 +225,15 @@ public class Folder   {
     return Objects.equals(this.id, folder.id) &&
         Objects.equals(this.parent, folder.parent) &&
         Objects.equals(this.name, folder.name) &&
+        Objects.equals(this.children, folder.children) &&
+        Objects.equals(this.documents, folder.documents) &&
         Objects.equals(this.created, folder.created) &&
         Objects.equals(this.updated, folder.updated);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, parent, name, created, updated);
+    return Objects.hash(id, parent, name, children, documents, created, updated);
   }
 
   @Override
@@ -173,6 +244,8 @@ public class Folder   {
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    parent: ").append(toIndentedString(parent)).append("\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
+    sb.append("    children: ").append(toIndentedString(children)).append("\n");
+    sb.append("    documents: ").append(toIndentedString(documents)).append("\n");
     sb.append("    created: ").append(toIndentedString(created)).append("\n");
     sb.append("    updated: ").append(toIndentedString(updated)).append("\n");
     sb.append("}");

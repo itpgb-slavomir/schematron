@@ -17,7 +17,7 @@ import javax.annotation.Generated;
  * A delegate to be called by the {@link NamespaceApiController}}.
  * Implement this interface with a {@link org.springframework.stereotype.Service} annotated class.
  */
-@Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2022-10-15T14:14:52.033+02:00[Europe/Paris]")
+@Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2022-10-15T15:13:55.822+02:00[Europe/Paris]")
 public interface NamespaceApiDelegate {
 
     default Optional<NativeWebRequest> getRequest() {
@@ -41,7 +41,7 @@ public interface NamespaceApiDelegate {
         getRequest().ifPresent(request -> {
             for (MediaType mediaType: MediaType.parseMediaTypes(request.getHeader("Accept"))) {
                 if (mediaType.isCompatibleWith(MediaType.valueOf("application/json"))) {
-                    String exampleString = "{ \"name\" : \"name\", \"id\" : 0, \"url\" : \"url\" }";
+                    String exampleString = "{ \"name\" : \"name\", \"id\" : 1, \"url\" : \"url\" }";
                     ApiUtil.setExampleResponse(request, "application/json", exampleString);
                     break;
                 }
@@ -68,7 +68,7 @@ public interface NamespaceApiDelegate {
         getRequest().ifPresent(request -> {
             for (MediaType mediaType: MediaType.parseMediaTypes(request.getHeader("Accept"))) {
                 if (mediaType.isCompatibleWith(MediaType.valueOf("application/json"))) {
-                    String exampleString = "{ \"name\" : \"name\", \"id\" : 0, \"url\" : \"url\" }";
+                    String exampleString = "{ \"name\" : \"name\", \"id\" : 1, \"url\" : \"url\" }";
                     ApiUtil.setExampleResponse(request, "application/json", exampleString);
                     break;
                 }
@@ -95,7 +95,7 @@ public interface NamespaceApiDelegate {
         getRequest().ifPresent(request -> {
             for (MediaType mediaType: MediaType.parseMediaTypes(request.getHeader("Accept"))) {
                 if (mediaType.isCompatibleWith(MediaType.valueOf("application/json"))) {
-                    String exampleString = "{ \"name\" : \"name\", \"id\" : 0, \"url\" : \"url\" }";
+                    String exampleString = "{ \"name\" : \"name\", \"id\" : 1, \"url\" : \"url\" }";
                     ApiUtil.setExampleResponse(request, "application/json", exampleString);
                     break;
                 }
@@ -128,7 +128,7 @@ public interface NamespaceApiDelegate {
         getRequest().ifPresent(request -> {
             for (MediaType mediaType: MediaType.parseMediaTypes(request.getHeader("Accept"))) {
                 if (mediaType.isCompatibleWith(MediaType.valueOf("application/json"))) {
-                    String exampleString = "{ \"items\" : [ { \"name\" : \"name\", \"id\" : 0, \"url\" : \"url\" }, { \"name\" : \"name\", \"id\" : 0, \"url\" : \"url\" } ] }";
+                    String exampleString = "{ \"items\" : [ { \"name\" : \"name\", \"id\" : 1, \"url\" : \"url\" }, { \"name\" : \"name\", \"id\" : 1, \"url\" : \"url\" } ] }";
                     ApiUtil.setExampleResponse(request, "application/json", exampleString);
                     break;
                 }
@@ -157,7 +157,7 @@ public interface NamespaceApiDelegate {
         getRequest().ifPresent(request -> {
             for (MediaType mediaType: MediaType.parseMediaTypes(request.getHeader("Accept"))) {
                 if (mediaType.isCompatibleWith(MediaType.valueOf("application/json"))) {
-                    String exampleString = "{ \"name\" : \"name\", \"id\" : 0, \"url\" : \"url\" }";
+                    String exampleString = "{ \"name\" : \"name\", \"id\" : 1, \"url\" : \"url\" }";
                     ApiUtil.setExampleResponse(request, "application/json", exampleString);
                     break;
                 }

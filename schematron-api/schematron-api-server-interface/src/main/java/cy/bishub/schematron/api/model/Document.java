@@ -4,7 +4,11 @@ import java.net.URI;
 import java.util.Objects;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
+import cy.bishub.schematron.api.model.Element;
+import cy.bishub.schematron.api.model.Namespace;
 import java.time.OffsetDateTime;
+import java.util.ArrayList;
+import java.util.List;
 import org.springframework.format.annotation.DateTimeFormat;
 import org.openapitools.jackson.nullable.JsonNullable;
 import java.time.OffsetDateTime;
@@ -22,7 +26,7 @@ import javax.annotation.Generated;
  * Document Model
  */
 @ApiModel(description = "Document Model")
-@Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2022-10-15T14:14:52.033+02:00[Europe/Paris]")
+@Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2022-10-15T15:13:55.822+02:00[Europe/Paris]")
 @javax.persistence.Entity(name="Document")
 public class Document   {
 
@@ -35,6 +39,18 @@ public class Document   {
   @JsonProperty("name")
   
   private String name;
+
+  @javax.persistence.OneToMany(cascade = javax.persistence.CascadeType.ALL,orphanRemoval=true)
+  @JsonProperty("namespaces")
+  @Valid
+  
+  
+  private List<Namespace> namespaces = null;
+
+  @javax.persistence.OneToOne(cascade = javax.persistence.CascadeType.ALL)@javax.persistence.JoinColumn(referencedColumnName = "id")
+  @JsonProperty("element")
+  
+  private Element element;
 
   
   @JsonProperty("content")
@@ -87,6 +103,50 @@ public class Document   {
 
   public void setName(String name) {
     this.name = name;
+  }
+
+  public Document namespaces(List<Namespace> namespaces) {
+    this.namespaces = namespaces;
+    return this;
+  }
+
+  public Document addNamespacesItem(Namespace namespacesItem) {
+    if (this.namespaces == null) {
+      this.namespaces = new ArrayList<>();
+    }
+    this.namespaces.add(namespacesItem);
+    return this;
+  }
+
+  /**
+   * Get namespaces
+   * @return namespaces
+  */
+  @ApiModelProperty(value = "")
+@Valid   public List<Namespace> getNamespaces() {
+    return namespaces;
+  }
+
+  public void setNamespaces(List<Namespace> namespaces) {
+    this.namespaces = namespaces;
+  }
+
+  public Document element(Element element) {
+    this.element = element;
+    return this;
+  }
+
+  /**
+   * Get element
+   * @return element
+  */
+  @ApiModelProperty(value = "")
+@Valid   public Element getElement() {
+    return element;
+  }
+
+  public void setElement(Element element) {
+    this.element = element;
   }
 
   public Document content(String content) {
@@ -155,6 +215,8 @@ public class Document   {
     Document document = (Document) o;
     return Objects.equals(this.id, document.id) &&
         Objects.equals(this.name, document.name) &&
+        Objects.equals(this.namespaces, document.namespaces) &&
+        Objects.equals(this.element, document.element) &&
         Objects.equals(this.content, document.content) &&
         Objects.equals(this.created, document.created) &&
         Objects.equals(this.updated, document.updated);
@@ -162,7 +224,7 @@ public class Document   {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, content, created, updated);
+    return Objects.hash(id, name, namespaces, element, content, created, updated);
   }
 
   @Override
@@ -172,6 +234,8 @@ public class Document   {
     
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
+    sb.append("    namespaces: ").append(toIndentedString(namespaces)).append("\n");
+    sb.append("    element: ").append(toIndentedString(element)).append("\n");
     sb.append("    content: ").append(toIndentedString(content)).append("\n");
     sb.append("    created: ").append(toIndentedString(created)).append("\n");
     sb.append("    updated: ").append(toIndentedString(updated)).append("\n");

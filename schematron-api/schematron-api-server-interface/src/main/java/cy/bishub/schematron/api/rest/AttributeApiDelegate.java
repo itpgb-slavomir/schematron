@@ -17,7 +17,7 @@ import javax.annotation.Generated;
  * A delegate to be called by the {@link AttributeApiController}}.
  * Implement this interface with a {@link org.springframework.stereotype.Service} annotated class.
  */
-@Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2022-10-15T14:14:52.033+02:00[Europe/Paris]")
+@Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2022-10-15T15:13:55.822+02:00[Europe/Paris]")
 public interface AttributeApiDelegate {
 
     default Optional<NativeWebRequest> getRequest() {
@@ -41,7 +41,7 @@ public interface AttributeApiDelegate {
         getRequest().ifPresent(request -> {
             for (MediaType mediaType: MediaType.parseMediaTypes(request.getHeader("Accept"))) {
                 if (mediaType.isCompatibleWith(MediaType.valueOf("application/json"))) {
-                    String exampleString = "{ \"created\" : \"2000-01-23T04:56:07.000+00:00\", \"name\" : \"name\", \"id\" : 0, \"updated\" : \"2000-01-23T04:56:07.000+00:00\", \"content\" : \"content\" }";
+                    String exampleString = "{ \"created\" : \"2000-01-23T04:56:07.000+00:00\", \"name\" : \"name\", \"namespace\" : { \"name\" : \"name\", \"id\" : 1, \"url\" : \"url\" }, \"id\" : 5, \"updated\" : \"2000-01-23T04:56:07.000+00:00\", \"content\" : \"content\" }";
                     ApiUtil.setExampleResponse(request, "application/json", exampleString);
                     break;
                 }
@@ -68,7 +68,7 @@ public interface AttributeApiDelegate {
         getRequest().ifPresent(request -> {
             for (MediaType mediaType: MediaType.parseMediaTypes(request.getHeader("Accept"))) {
                 if (mediaType.isCompatibleWith(MediaType.valueOf("application/json"))) {
-                    String exampleString = "{ \"created\" : \"2000-01-23T04:56:07.000+00:00\", \"name\" : \"name\", \"id\" : 0, \"updated\" : \"2000-01-23T04:56:07.000+00:00\", \"content\" : \"content\" }";
+                    String exampleString = "{ \"created\" : \"2000-01-23T04:56:07.000+00:00\", \"name\" : \"name\", \"namespace\" : { \"name\" : \"name\", \"id\" : 1, \"url\" : \"url\" }, \"id\" : 5, \"updated\" : \"2000-01-23T04:56:07.000+00:00\", \"content\" : \"content\" }";
                     ApiUtil.setExampleResponse(request, "application/json", exampleString);
                     break;
                 }
@@ -95,7 +95,7 @@ public interface AttributeApiDelegate {
         getRequest().ifPresent(request -> {
             for (MediaType mediaType: MediaType.parseMediaTypes(request.getHeader("Accept"))) {
                 if (mediaType.isCompatibleWith(MediaType.valueOf("application/json"))) {
-                    String exampleString = "{ \"created\" : \"2000-01-23T04:56:07.000+00:00\", \"name\" : \"name\", \"id\" : 0, \"updated\" : \"2000-01-23T04:56:07.000+00:00\", \"content\" : \"content\" }";
+                    String exampleString = "{ \"created\" : \"2000-01-23T04:56:07.000+00:00\", \"name\" : \"name\", \"namespace\" : { \"name\" : \"name\", \"id\" : 1, \"url\" : \"url\" }, \"id\" : 5, \"updated\" : \"2000-01-23T04:56:07.000+00:00\", \"content\" : \"content\" }";
                     ApiUtil.setExampleResponse(request, "application/json", exampleString);
                     break;
                 }
@@ -128,7 +128,7 @@ public interface AttributeApiDelegate {
         getRequest().ifPresent(request -> {
             for (MediaType mediaType: MediaType.parseMediaTypes(request.getHeader("Accept"))) {
                 if (mediaType.isCompatibleWith(MediaType.valueOf("application/json"))) {
-                    String exampleString = "{ \"items\" : [ { \"created\" : \"2000-01-23T04:56:07.000+00:00\", \"name\" : \"name\", \"id\" : 0, \"updated\" : \"2000-01-23T04:56:07.000+00:00\", \"content\" : \"content\" }, { \"created\" : \"2000-01-23T04:56:07.000+00:00\", \"name\" : \"name\", \"id\" : 0, \"updated\" : \"2000-01-23T04:56:07.000+00:00\", \"content\" : \"content\" } ] }";
+                    String exampleString = "{ \"items\" : [ { \"created\" : \"2000-01-23T04:56:07.000+00:00\", \"name\" : \"name\", \"namespace\" : { \"name\" : \"name\", \"id\" : 1, \"url\" : \"url\" }, \"id\" : 5, \"updated\" : \"2000-01-23T04:56:07.000+00:00\", \"content\" : \"content\" }, { \"created\" : \"2000-01-23T04:56:07.000+00:00\", \"name\" : \"name\", \"namespace\" : { \"name\" : \"name\", \"id\" : 1, \"url\" : \"url\" }, \"id\" : 5, \"updated\" : \"2000-01-23T04:56:07.000+00:00\", \"content\" : \"content\" } ] }";
                     ApiUtil.setExampleResponse(request, "application/json", exampleString);
                     break;
                 }
@@ -157,7 +157,7 @@ public interface AttributeApiDelegate {
         getRequest().ifPresent(request -> {
             for (MediaType mediaType: MediaType.parseMediaTypes(request.getHeader("Accept"))) {
                 if (mediaType.isCompatibleWith(MediaType.valueOf("application/json"))) {
-                    String exampleString = "{ \"created\" : \"2000-01-23T04:56:07.000+00:00\", \"name\" : \"name\", \"id\" : 0, \"updated\" : \"2000-01-23T04:56:07.000+00:00\", \"content\" : \"content\" }";
+                    String exampleString = "{ \"created\" : \"2000-01-23T04:56:07.000+00:00\", \"name\" : \"name\", \"namespace\" : { \"name\" : \"name\", \"id\" : 1, \"url\" : \"url\" }, \"id\" : 5, \"updated\" : \"2000-01-23T04:56:07.000+00:00\", \"content\" : \"content\" }";
                     ApiUtil.setExampleResponse(request, "application/json", exampleString);
                     break;
                 }

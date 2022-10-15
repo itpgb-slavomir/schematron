@@ -22,7 +22,7 @@ import javax.annotation.Generated;
 /**
  * AttributeList
  */
-@Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2022-10-15T14:14:52.033+02:00[Europe/Paris]")
+@Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2022-10-15T15:13:55.822+02:00[Europe/Paris]")
 // TODO Add x-java-class-annotation
 public class AttributeList   {
 
