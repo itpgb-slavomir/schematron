@@ -1,10 +1,29 @@
+<eui-page>
 
-<form [formGroup]="form" enctype="multipart/form-data">
+	<eui-page-header 
+	label="Upload documents"
+	subLabel="Schematron/Documents/">
 
-	<eui-file-upload formControlName="image" [progress]="progress"
-		hasPreviewAsIcon="true" hasPreviewAsImage="false" hasDragArea>
-	<button euiButton euiPrimary (click)="submit()">{{ 'upload' | translate |
-		translate}}</button>
-	</eui-file-upload>
+</eui-page-header>
 
-</form>
+	<eui-page-content>
+
+		<eui-block-content euiLoading="euiLoading">
+
+			<form [formGroup]="form" enctype="multipart/form-data">
+			
+				<eui-file-upload formControlName="image" [progress]="progress"
+					hasPreviewAsIcon="true" hasPreviewAsImage="false" hasDragArea>
+				<button euiButton euiPrimary (click)="submit()">{{ 'upload' | translate |
+					translate}}</button>
+				</eui-file-upload>
+			
+			</form>
+
+		</eui-block-content>
+
+	</eui-page-content>
+
+	<eui-page-footer></eui-page-footer>
+
+</eui-page>

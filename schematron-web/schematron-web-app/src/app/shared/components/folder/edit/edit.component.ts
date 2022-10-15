@@ -29,6 +29,10 @@ export class SXFolderEditComponent implements OnInit {
 	dynForm: DynFormApi;
 	private formSubs;
 
+	public euiLoading: boolean;
+
+	public mode: string;
+
 	constructor(private formApiService: DynFormApiService) {
 		this.dynForm = this.formApiService.createForm(this.metaData, this.initialData);
 		this.formSubs = this.dynForm.isReady.subscribe((ready) => {

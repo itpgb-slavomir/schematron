@@ -1,54 +1,48 @@
-<eui-page-header 
-	label="Documents"
-	subLabel="Browse">
+<eui-page-header-action-items>
 
-	<eui-page-header-action-items>
+	<eui-buttons euiSizeM>
 
-		<eui-buttons euiSizeM>
+		<euiButtonsActionsContent>
 
-			<euiButtonsActionsContent>
+			<button euiButton
+				euiPrimary
+				[euiDisabled]="true">
+				<span euiIcon iconClass="eui-icon eui-icon-bars"></span>
+			</button>
 
-				<button euiButton
-					euiPrimary
-					[euiDisabled]="true">
-					<span euiIcon iconClass="eui-icon eui-icon-bars"></span>
-				</button>
+			<button euiButton
+				euiIconButton
+				[euiDisabled]="false">
+				<span euiIcon iconClass="eui-icon eui-icon-grid"></span>
+			</button>
 
-				<button euiButton
-					euiIconButton
-					[euiDisabled]="false">
-					<span euiIcon iconClass="eui-icon eui-icon-grid"></span>
-				</button>
+			<a euiButton
+				euiPrimary
+				[routerLink]="['', 'upload']">
+				{{ 'upload' | translate}}
+			</a>
 
-				<a euiButton
-					euiPrimary
-					[routerLink]="['', 'upload']">
-					{{ 'upload' | translate}}
-				</a>
+			<a euiButton
+				euiPrimary
+				[routerLink]="['', 'folder', 'edit']">
+				{{ 'create-folder-title' | translate}}
+			</a>
 
-				<a euiButton
-					euiPrimary
-					[routerLink]="['', 'folder', 'edit']">
-					{{ 'create-folder-title' | translate}}
-				</a>
+			<a euiButton
+				euiPrimary
+				[routerLink]="['', 'document', 'edit']">
+				{{ 'create-document-title' | translate}}
+			</a>
 
-				<a euiButton
-					euiPrimary
-					[routerLink]="['', 'document', 'edit']">
-					{{ 'create-document-title' | translate}}
-				</a>
+			<a 
+				euiButton
+				euiPrimary
+				[routerLink]="['', 'schema', 'edit']">
+				{{ 'create-schema-title' | translate}}
+			</a>
 
-				<a 
-					euiButton
-					euiPrimary
-					[routerLink]="['', 'schema', 'edit']">
-					{{ 'create-schema-title' | translate}}
-				</a>
+		</euiButtonsActionsContent>
 
-			</euiButtonsActionsContent>
+	</eui-buttons>
 
-		</eui-buttons>
-
-	</eui-page-header-action-items>
-
-</eui-page-header>
+</eui-page-header-action-items>

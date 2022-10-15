@@ -7,7 +7,6 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { AppStarterService } from './app-starter.service';
 import { DashboardComponent } from './features/dashboard/dashboard.component';
-import { DynFormApiService, FormService } from '@eui/dynamic-forms';
 
 @NgModule({
 	declarations: [
@@ -24,8 +23,6 @@ import { DynFormApiService, FormService } from '@eui/dynamic-forms';
 
 	providers: [
 		AppStarterService,
-		DynFormApiService,
-		FormService,
 		{
 			provide: APP_INITIALIZER,
 			useFactory: (appStarterService) => () => new Promise<void>((resolve) => {

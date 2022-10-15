@@ -24,10 +24,43 @@ export class AppComponent implements OnInit, OnDestroy {
 			url: ['', 'dashboard'],
 			iconClass: ''
 		},
+
 		{
 			label: 'Documents',
 			url: ['', 'folder'],
-			iconClass: ''
+			iconClass: '',
+			children: [
+
+				{
+					label: 'Search',
+					url: ['', 'folder', 'browse'],
+					iconClass: ''
+				},
+
+				{
+					label: 'Upload',
+					url: ['', 'upload'],
+					iconClass: ''
+				},
+
+				{
+					label: 'Create Folder',
+					url: ['', 'folder', 'edit'],
+					iconClass: ''
+				},
+
+				{
+					label: 'Create Document',
+					url: ['', 'document', 'edit'],
+					iconClass: ''
+				},
+
+				{
+					label: 'Create Schema',
+					url: ['', 'schema', 'edit'],
+					iconClass: ''
+				}
+			]
 		},
 		{
 			label: 'Jobs',

@@ -19,6 +19,8 @@ import { SXSchemaCreateComponent } from './shared/components/schema/create/creat
 import { SxSchemaEditComponent } from './shared/components/schema/edit/edit.component';
 import { SxSchemaViewComponent } from './shared/components/schema/view/view.component';
 
+import { SXUploadComponent } from './shared/components/upload/upload.component';
+
 const routes: Routes = [
 
 	{
@@ -81,6 +83,12 @@ const routes: Routes = [
 	},
 
 	{
+		path: 'document/edit',
+		component: SXDocumentEditComponent
+	},
+
+
+	{
 		path: 'document/edit/:uuid',
 		component: SXDocumentEditComponent
 	},
@@ -112,7 +120,7 @@ const routes: Routes = [
 
 	{
 		path: 'upload',
-		component: SXDocumentUploadComponent
+		component: SXUploadComponent
 	},
 ];
 

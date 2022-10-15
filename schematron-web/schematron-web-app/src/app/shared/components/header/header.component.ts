@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
 	selector: 'sx-header',
@@ -6,6 +6,15 @@ import { Component, OnInit } from '@angular/core';
 	styleUrls: ['./header.component.scss']
 })
 export class SXHeaderComponent implements OnInit {
+
+	@Input()
+	public title: string = '';
+
+	@Input()
+	public subtitle: string = '';
+
+	@Input()
+	public meuItems: Array<object> = [];
 
 	constructor() { }
 

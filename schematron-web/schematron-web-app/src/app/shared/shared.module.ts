@@ -5,7 +5,7 @@ import { RouterModule } from '@angular/router';
 import { TranslateModule } from '@ngx-translate/core';
 import { UxAllModule } from '@eui/components/legacy';
 import { EuiAllModule } from '@eui/components';
-import { DynamicFormsModule } from '@eui/dynamic-forms';
+import { DynamicFormsModule, DynFormApiService, FormService } from '@eui/dynamic-forms';
 import { ApiModule } from './api-client/api.module';
 
 import { SXCreateWizardComponent } from './components/create-wizard/index.component';
@@ -50,6 +50,7 @@ import { SXUploadComponent } from './components/upload/upload.component';
 		DynamicFormsModule,
 		ApiModule,
 	],
+
 	declarations: [
 		SXCreateWizardComponent,
 
@@ -81,6 +82,7 @@ import { SXUploadComponent } from './components/upload/upload.component';
 		SXUploadComponent,
 
 	],
+
 	exports: [
 		CommonModule,
 		FormsModule,
@@ -120,6 +122,11 @@ import { SXUploadComponent } from './components/upload/upload.component';
 		SxSchemaViewComponent,
 
 		SXUploadComponent
-	]
+	],
+
+	providers: [
+		FormService,
+		DynFormApiService,
+	],
 })
 export class SharedModule { }
