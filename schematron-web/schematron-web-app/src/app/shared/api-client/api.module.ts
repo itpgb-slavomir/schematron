@@ -2,6 +2,7 @@ import { NgModule, ModuleWithProviders, SkipSelf, Optional } from '@angular/core
 import { Configuration } from './configuration';
 import { HttpClient } from '@angular/common/http';
 
+import { AttributeService } from './api/attribute.service';
 import { DocumentService } from './api/document.service';
 import { ElementService } from './api/element.service';
 import { FolderService } from './api/folder.service';

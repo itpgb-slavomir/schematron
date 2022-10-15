@@ -1,3 +1,5 @@
+export * from './attribute';
+export * from './attributeList';
 export * from './document';
 export * from './documentList';
 export * from './element';
