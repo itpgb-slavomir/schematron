@@ -15,10 +15,11 @@ properties:
     - '@javax.persistence.GeneratedValue( strategy=javax.persistence.GenerationType.AUTO)'
     - '@javax.persistence.Column(columnDefinition = "serial")'
 
-  parent:
-    x-java-field-annotations:
-    - '@javax.persistence.OneToOne(cascade = javax.persistence.CascadeType.ALL,orphanRemoval=true)'
-    $ref: ./Folder.yaml
+#  parent:
+#    x-java-field-annotations:
+#    - '@javax.persistence.OneToOne(cascade = javax.persistence.CascadeType.ALL,orphanRemoval=true)'
+#    - '@javax.persistence.Column(nullable = true)'
+#    $ref: ./Folder.yaml
 
   name:
     type: string
@@ -38,11 +39,15 @@ properties:
     x-java-field-annotations:
     - '@javax.persistence.OneToMany(cascade = javax.persistence.CascadeType.ALL,orphanRemoval=true)'
   
-  created:
-    type: string
-    format: date-time
-
-  updated:
-    type: string
-    format: date-time
+#  created:
+#    type: string
+#    format: date-time
+#    x-java-field-annotations:
+#    - '@javax.persistence.Column(nullable = true)'
+#
+#  updated:
+#    type: string
+#    format: date-time
+#    x-java-field-annotations:
+#    - '@javax.persistence.Column(nullable = true)'
   

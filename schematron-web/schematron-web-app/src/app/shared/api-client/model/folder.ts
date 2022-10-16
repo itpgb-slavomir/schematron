@@ -17,10 +17,7 @@ import { Document } from './document';
  */
 export class Folder { 
     id?: number;
-    parent?: Folder;
     name?: string;
     children?: Array<Folder>;
     documents?: Array<Document>;
-    created?: string;
-    updated?: string;
 }

@@ -1,50 +1,14 @@
 <eui-page>
 
-	<eui-page-header 
-	label="Documents"
-	subLabel="Browse">
-
-	<eui-page-header-action-items>
-
-		<eui-buttons euiSizeM>
-
-			<euiButtonsActionsContent>
-
-				<button euiButton
-					euiPrimary
-					[euiDisabled]="true">
-					<span euiIcon iconClass="eui-icon eui-icon-bars"></span>
-				</button>
-
-				<button euiButton
-					euiIconButton
-					[euiDisabled]="false">
-					<span euiIcon iconClass="eui-icon eui-icon-grid"></span>
-				</button>
-
-			</euiButtonsActionsContent>
-
-		</eui-buttons>
-
-	</eui-page-header-action-items>
-
-</eui-page-header>
-
 	<eui-page-content>
 
-		<eui-block-content euiLoading="euiLoading">
+		<eui-block-content [isBlocked]="isBlocked">
 
-			<ng-template *ngIf="mode=='edit'">
-
-				
-				<!-- <ux-dyn-forms [dynForm]="dynForm"></ux-dyn-forms> -->
-
-			</ng-template>
+			<ux-dyn-forms [dynForm]="form"></ux-dyn-forms>
 
 		</eui-block-content>
 
 	</eui-page-content>
 
-	<eui-page-footer></eui-page-footer>
 
 </eui-page>

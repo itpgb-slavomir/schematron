@@ -26,7 +26,7 @@ public class PageableUtil {
 			}
 		}
 
-		Pageable pageRequest = PageRequest.of(0, 1000, sort);
+		Pageable pageRequest = PageRequest.of(1, 1000, sort);
 		return pageRequest;
 	}
 }

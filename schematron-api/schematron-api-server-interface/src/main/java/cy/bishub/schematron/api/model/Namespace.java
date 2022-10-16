@@ -20,7 +20,7 @@ import javax.annotation.Generated;
  * Namespace Model
  */
 @ApiModel(description = "Namespace Model")
-@Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2022-10-15T15:13:55.822+02:00[Europe/Paris]")
+@Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2022-10-16T11:11:56.606013+02:00[Europe/Paris]")
 @javax.persistence.Entity(name="Namespace")
 public class Namespace   {
 

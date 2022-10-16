@@ -30,10 +30,15 @@ export class AppComponent implements OnInit, OnDestroy {
 			url: ['', 'folder'],
 			iconClass: '',
 			children: [
+				{
+					label: 'Browse',
+					url: ['', 'folder'],
+					iconClass: ''
+				},
 
 				{
 					label: 'Search',
-					url: ['', 'folder', 'browse'],
+					url: ['', 'folder', 'search'],
 					iconClass: ''
 				},
 

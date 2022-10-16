@@ -1,7 +1,6 @@
 <eui-page>
 
-	<eui-page-header 
-		label="Documents">
+	<eui-page-header>
 
 		<eui-page-header-action-items>
 	
@@ -31,11 +30,14 @@
 
 	<eui-page-content>
 
-		<eui-block-content euiLoading="euiLoading">
+		<eui-block-content>
 
-			<ng-template *ngIf="mode=='table'">
+				<table
+					euiTable
+					euiTableResponsive
+					[rows]="documentList?.items??[]"
+					[paginator]="true ? paginator : null">
 
-				<table euiTable euiTableResponsive [rows]="documentList.items">
 					<ng-template euiTemplate="header">
 					<tr>
 						<th>{{ 'document.id' | translate }}</th>
@@ -44,6 +46,7 @@
 						<th>{{ 'document.last-modified-date' | translate }}</th>
 					</tr>
 					</ng-template>
+
 					<ng-template let-row euiTemplate="body">
 					<tr>
 						<td>{{ row.id }}</td>
@@ -52,14 +55,29 @@
 						<td>{{ row.modifiedDate}}</td>
 					</tr>
 					</ng-template>
-				</table>
 
-			</ng-template>
+					<ng-template euiTemplate="emptyMessage">
+						<tr>
+							<td class="eui-u-text-center" colspan="4">{{ 'no-data' | translate }}</td>
+						</tr>
+					</ng-template>
+
+				</table>
 
 		</eui-block-content>
 
 	</eui-page-content>
 
-	<eui-page-footer></eui-page-footer>
+	<eui-page-footer>
+
+		<eui-table-paginator
+			#paginator
+			[pageSizeOptions]="[5, 10, 25, 50]"
+			[pageSize]="10"
+			(pageChange)="onPageChange($event)"
+			[isHidden]="true">
+		</eui-table-paginator>
+
+	</eui-page-footer>
 
 </eui-page>

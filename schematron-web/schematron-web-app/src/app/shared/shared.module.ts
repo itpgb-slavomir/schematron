@@ -5,7 +5,14 @@ import { RouterModule } from '@angular/router';
 import { TranslateModule } from '@ngx-translate/core';
 import { UxAllModule } from '@eui/components/legacy';
 import { EuiAllModule } from '@eui/components';
-import { DynamicFormsModule, DynFormApiService, FormService } from '@eui/dynamic-forms';
+import {
+	DynamicFormsModule,
+	DynConfigService,
+	DynFormApiService,
+	FormService,
+	UxDynFormsComponentModule,
+	UxDynMappingConfig
+} from '@eui/dynamic-forms';
 import { ApiModule } from './api-client/api.module';
 
 import { SXCreateWizardComponent } from './components/create-wizard/index.component';
@@ -17,9 +24,10 @@ import { SXDocumentEditComponent } from './components/document/edit/edit.compone
 import { SXDocumentSearchComponent } from './components/document/search/search.component';
 import { SXDocumentUploadComponent } from './components/document/upload/upload.component';
 
-import { SXFolderCreateComponent } from './components/folder/create/create.component';
 import { SXFolderBrowseComponent } from './components/folder/browse/browse.component';
+import { SXFolderCreateComponent } from './components/folder/create/create.component';
 import { SXFolderEditComponent } from './components/folder/edit/edit.component';
+import { SXFolderSearchComponent } from './components/folder/search/search.component';
 
 import { SXHeaderComponent } from './components/header/header.component';
 
@@ -36,7 +44,19 @@ import { SxSchemaSearchComponent } from './components/schema/search/search.compo
 import { SxSchemaViewComponent } from './components/schema/view/view.component';
 
 import { SXUploadComponent } from './components/upload/upload.component';
+import { LocalStorageService } from './services/local-storage.service';
 
+export const dynMapDefault: UxDynMappingConfig = {
+	rulesMap: {
+		// customRule: customRule,
+	},
+	validationsMap: {
+		// customVal: customVal,
+	},
+	valMessagesMap: {
+		// customValMessageMap: customValMessageMap,
+	},
+};
 
 @NgModule({
 	imports: [
@@ -48,7 +68,9 @@ import { SXUploadComponent } from './components/upload/upload.component';
 		EuiAllModule,
 		TranslateModule,
 		DynamicFormsModule,
+		UxDynFormsComponentModule,
 		ApiModule,
+		DynamicFormsModule.forRoot(dynMapDefault),
 	],
 
 	declarations: [
@@ -64,6 +86,7 @@ import { SXUploadComponent } from './components/upload/upload.component';
 		SXFolderCreateComponent,
 		SXFolderBrowseComponent,
 		SXFolderEditComponent,
+		SXFolderSearchComponent,
 
 		SXHeaderComponent,
 
@@ -92,6 +115,7 @@ import { SXUploadComponent } from './components/upload/upload.component';
 		EuiAllModule,
 		TranslateModule,
 		DynamicFormsModule,
+		UxDynFormsComponentModule,
 		ApiModule,
 
 		SXCreateWizardComponent,
@@ -103,9 +127,10 @@ import { SXUploadComponent } from './components/upload/upload.component';
 		SXDocumentSearchComponent,
 		SXDocumentUploadComponent,
 
-		SXFolderCreateComponent,
 		SXFolderBrowseComponent,
+		SXFolderCreateComponent,
 		SXFolderEditComponent,
+		SXFolderSearchComponent,
 
 		SXHeaderComponent,
 
@@ -125,8 +150,10 @@ import { SXUploadComponent } from './components/upload/upload.component';
 	],
 
 	providers: [
+		DynConfigService,
 		FormService,
 		DynFormApiService,
+		LocalStorageService,
 	],
 })
 export class SharedModule { }

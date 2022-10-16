@@ -30,8 +30,7 @@ public class FolderController implements FolderApiDelegate {
 
 		FolderList list = new FolderList();
 		list.setItemsTotalCount(repository.count());
-		list.setItems(Lists
-				.newArrayList(repository.findAll(PageableUtil.createPageRequest(page, pageSize, sortBy, sortOrder))));
+		list.setItems(Lists.newArrayList(repository.findAll()));
 
 		return new ResponseEntity<>(list, HttpStatus.OK);
 	}

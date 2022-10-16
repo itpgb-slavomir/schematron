@@ -9,6 +9,7 @@ import { SXDocumentBrowseComponent } from './shared/components/document/browse/b
 import { SXDocumentCreateComponent } from './shared/components/document/create/create.component';
 import { SXDocumentEditComponent } from './shared/components/document/edit/edit.component';
 import { SXDocumentDetailComponent } from './shared/components/document/detail/detail.component';
+import { SXFolderSearchComponent } from './shared/components/folder/search/search.component';
 import { SXDocumentUploadComponent } from './shared/components/document/upload/upload.component';
 
 import { SXFolderBrowseComponent } from './shared/components/folder/browse/browse.component';
@@ -60,6 +61,11 @@ const routes: Routes = [
 	{
 		path: 'folder',
 		component: SXFolderBrowseComponent,
+	},
+
+	{
+		path: 'folder/search',
+		component: SXFolderSearchComponent
 	},
 
 	{

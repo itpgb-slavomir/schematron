@@ -10,6 +10,8 @@ import { DocumentList } from 'src/app/shared/api-client/model/documentList';
 })
 export class SXFolderBrowseComponent implements OnInit {
 
+	public isBlocked: boolean = true;
+
 	public mode: string = 'table';
 
 	public euiLoading: boolean = false;
@@ -23,20 +25,21 @@ export class SXFolderBrowseComponent implements OnInit {
 	}
 
 	private load(): void {
-		this.euiLoading = true;
+		this.isBlocked = true;
 
 		let promises = [];
 
 		promises.push(this.service.getFolderList()
 			.toPromise()
-			.then((response) => {
+			.then((response: DocumentList) => {
 				this.documentList = response;
+				console.log(response);
 			}));
 
 		Promise.all(promises)
 
 			.then((response) => {
-				console.log(response);
+
 			})
 
 			.catch((error) => {
@@ -44,8 +47,12 @@ export class SXFolderBrowseComponent implements OnInit {
 			})
 
 			.finally(() => {
-				this.euiLoading = false;
+				this.isBlocked = false;
 			});
+	}
+
+	onPageChange(event) {
+
 	}
 
 }

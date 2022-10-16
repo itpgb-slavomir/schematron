@@ -1,15 +1,14 @@
 <eui-page>
 
-	<eui-page-header 
-		label="Schema"
-		subLabel="Untiled.xsd">
-
-		<sx-header></sx-header>
-
-	</eui-page-header>
-
 	<eui-page-content>
-		<textarea></textarea>
+
+		<eui-block-content [isBlocked]="isBlocked">
+
+			<ux-dyn-forms [dynForm]="form"></ux-dyn-forms>
+
+		</eui-block-content>
+
 	</eui-page-content>
+
 
 </eui-page>
