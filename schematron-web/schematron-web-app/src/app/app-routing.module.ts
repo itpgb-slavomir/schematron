@@ -7,17 +7,22 @@ import { SXCreateWizardComponent } from './shared/components/create-wizard/index
 
 import { SXDocumentBrowseComponent } from './shared/components/document/browse/browse.component';
 import { SXDocumentCreateComponent } from './shared/components/document/create/create.component';
-import { SXDocumentEditComponent } from './shared/components/document/edit/edit.component';
 import { SXDocumentDetailComponent } from './shared/components/document/detail/detail.component';
-import { SXFolderSearchComponent } from './shared/components/folder/search/search.component';
+import { SXDocumentEditComponent } from './shared/components/document/edit/edit.component';
+import { SXDocumentIndexComponent } from './shared/components/document/index/index.component';
 import { SXDocumentUploadComponent } from './shared/components/document/upload/upload.component';
+
+import { SXFolderSearchComponent } from './shared/components/folder/search/search.component';
+
 
 import { SXFolderBrowseComponent } from './shared/components/folder/browse/browse.component';
 import { SXFolderCreateComponent } from './shared/components/folder/create/create.component';
 import { SXFolderEditComponent } from './shared/components/folder/edit/edit.component';
+import { SXFolderIndexComponent } from './shared/components/folder/index/index.component';
 
 import { SXSchemaCreateComponent } from './shared/components/schema/create/create.component';
 import { SxSchemaEditComponent } from './shared/components/schema/edit/edit.component';
+import { SXSchemaIndexComponent } from './shared/components/schema/index/index.component';
 import { SxSchemaViewComponent } from './shared/components/schema/view/view.component';
 
 import { SXUploadComponent } from './shared/components/upload/upload.component';
@@ -32,16 +37,6 @@ const routes: Routes = [
 	{
 		path: 'dashboard',
 		component: DashboardComponent
-	},
-
-	{
-		path: 'create',
-		component: SXCreateWizardComponent
-	},
-
-	{
-		path: 'document',
-		component: SXDocumentBrowseComponent
 	},
 
 	{
@@ -60,73 +55,106 @@ const routes: Routes = [
 
 	{
 		path: 'folder',
-		component: SXFolderBrowseComponent,
-	},
+		component: SXFolderIndexComponent,
 
-	{
-		path: 'folder/search',
-		component: SXFolderSearchComponent
-	},
+		children: [
+			{
+				path: '',
+				component: SXFolderBrowseComponent
+			},
+			{
+				path: 'search',
+				component: SXFolderSearchComponent
+			},
 
-	{
-		path: 'folder/create',
-		component: SXFolderCreateComponent
-	},
+			{
+				path: 'create',
+				component: SXFolderCreateComponent
+			},
 
-	{
-		path: 'folder/edit',
-		component: SXFolderEditComponent
-	},
+			{
+				path: 'edit',
+				component: SXFolderEditComponent
+			},
+			{
+				path: ':uuid',
+				component: SXFolderEditComponent
+			},
+			{
+				path: 'create',
+				component: SXFolderEditComponent
+			},
 
-	{
-		path: 'folder/:uuid',
-		component: SXDocumentBrowseComponent
-	},
+			{
+				path: 'document',
+				component: SXDocumentIndexComponent,
+				children: [
 
-	{
-		path: 'document/create',
-		component: SXDocumentCreateComponent
-	},
+					{
+						path: 'browse',
+						component: SXDocumentBrowseComponent
+					},
 
-	{
-		path: 'document/edit',
-		component: SXDocumentEditComponent
-	},
+					{
+						path: 'create',
+						component: SXDocumentCreateComponent
+					},
+
+					{
+						path: 'example',
+						component: SXDocumentDetailComponent
+					},
+
+					{
+						path: 'edit',
+						component: SXDocumentEditComponent
+					},
+
+					{
+						path: 'edit/:uuid',
+						component: SXDocumentEditComponent
+					},
+
+					{
+						path: 'detail/:uuid',
+						component: SXDocumentDetailComponent
+					},
+
+					{
+						path: 'upload',
+						component: SXUploadComponent
+					},
+				]
+			},
 
 
-	{
-		path: 'document/edit/:uuid',
-		component: SXDocumentEditComponent
-	},
+			{
+				path: 'schema',
+				component: SXSchemaIndexComponent,
+				children: [
+					{
+						path: 'create',
+						component: SXSchemaCreateComponent
+					},
 
-	{
-		path: 'document/detail/:uuid',
-		component: SXDocumentDetailComponent
-	},
+					{
+						path: 'edit',
+						component: SxSchemaEditComponent
+					},
 
-	{
-		path: 'schema/create',
-		component: SXSchemaCreateComponent
-	},
+					{
+						path: 'edit/:uuid',
+						component: SxSchemaEditComponent
+					},
 
-	{
-		path: 'schema/edit',
-		component: SxSchemaEditComponent
-	},
+					{
+						path: 'detail/:uuid',
+						component: SxSchemaViewComponent
+					},
+				]
+			},
 
-	{
-		path: 'schema/edit/:uuid',
-		component: SxSchemaEditComponent
-	},
-
-	{
-		path: 'schema/detail/:uuid',
-		component: SxSchemaViewComponent
-	},
-
-	{
-		path: 'upload',
-		component: SXUploadComponent
+		]
 	},
 ];
 

@@ -1,21 +1,16 @@
-<eui-page>
+<form [formGroup]="form" enctype="multipart/form-data">
 
-	<eui-page-content>
+	<eui-file-upload
+		formControlName="image"
+		[progress]="progress"
+		hasPreviewAsIcon="true"
+		hasPreviewAsImage="false"
+		hasDragArea>
 
-		<eui-block-content euiLoading="euiLoading">
+		<button euiButton euiPrimary (click)="onSubmit()">
+			{{ 'upload' | translate}}
+		</button>
 
-			<form [formGroup]="form" enctype="multipart/form-data">
-			
-				<eui-file-upload formControlName="image" [progress]="progress"
-					hasPreviewAsIcon="true" hasPreviewAsImage="false" hasDragArea>
-				<button euiButton euiPrimary (click)="onSubmit()">{{ 'upload' | translate |
-					translate}}</button>
-				</eui-file-upload>
+	</eui-file-upload>
 
-			</form>
-
-		</eui-block-content>
-
-	</eui-page-content>
-
-</eui-page>
+</form>

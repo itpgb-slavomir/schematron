@@ -21,15 +21,19 @@ import { SXDocumentCreateComponent } from './components/document/create/create.c
 import { SXDocumentBrowseComponent } from './components/document/browse/browse.component';
 import { SXDocumentDetailComponent } from './components/document/detail/detail.component';
 import { SXDocumentEditComponent } from './components/document/edit/edit.component';
+import { SXDocumentIndexComponent } from './components/document/index/index.component';
 import { SXDocumentSearchComponent } from './components/document/search/search.component';
 import { SXDocumentUploadComponent } from './components/document/upload/upload.component';
 
 import { SXFolderBrowseComponent } from './components/folder/browse/browse.component';
 import { SXFolderCreateComponent } from './components/folder/create/create.component';
 import { SXFolderEditComponent } from './components/folder/edit/edit.component';
+import { SXFolderIndexComponent } from './components/folder/index/index.component';
 import { SXFolderSearchComponent } from './components/folder/search/search.component';
 
 import { SXHeaderComponent } from './components/header/header.component';
+
+import { SXFormComponent } from './components/form/form.component';
 
 import { SXNamespaceBrowseComponent } from './components/namespace/browse/browse.component';
 import { SXNamespaceCreateComponent } from './components/namespace/create/create.component';
@@ -40,10 +44,12 @@ import { SXNamespaceSearchComponent } from './components/namespace/search/search
 import { SxSchemaBrowseComponent } from './components/schema/browse/browse.component';
 import { SXSchemaCreateComponent } from './components/schema/create/create.component';
 import { SxSchemaEditComponent } from './components/schema/edit/edit.component';
+import { SXSchemaIndexComponent } from './components/schema/index/index.component';
 import { SxSchemaSearchComponent } from './components/schema/search/search.component';
 import { SxSchemaViewComponent } from './components/schema/view/view.component';
 
 import { SXUploadComponent } from './components/upload/upload.component';
+
 import { LocalStorageService } from './services/local-storage.service';
 
 export const dynMapDefault: UxDynMappingConfig = {
@@ -80,15 +86,18 @@ export const dynMapDefault: UxDynMappingConfig = {
 		SXDocumentCreateComponent,
 		SXDocumentDetailComponent,
 		SXDocumentEditComponent,
+		SXDocumentIndexComponent,
 		SXDocumentSearchComponent,
 		SXDocumentUploadComponent,
 
 		SXFolderCreateComponent,
 		SXFolderBrowseComponent,
 		SXFolderEditComponent,
+		SXFolderIndexComponent,
 		SXFolderSearchComponent,
 
 		SXHeaderComponent,
+		SXFormComponent,
 
 		SXNamespaceBrowseComponent,
 		SXNamespaceCreateComponent,
@@ -99,6 +108,7 @@ export const dynMapDefault: UxDynMappingConfig = {
 		SxSchemaBrowseComponent,
 		SXSchemaCreateComponent,
 		SxSchemaEditComponent,
+		SXSchemaIndexComponent,
 		SxSchemaSearchComponent,
 		SxSchemaViewComponent,
 
@@ -124,6 +134,7 @@ export const dynMapDefault: UxDynMappingConfig = {
 		SXDocumentCreateComponent,
 		SXDocumentDetailComponent,
 		SXDocumentEditComponent,
+		SXDocumentIndexComponent,
 		SXDocumentSearchComponent,
 		SXDocumentUploadComponent,
 
@@ -133,6 +144,7 @@ export const dynMapDefault: UxDynMappingConfig = {
 		SXFolderSearchComponent,
 
 		SXHeaderComponent,
+		SXFormComponent,
 
 		SXNamespaceBrowseComponent,
 		SXNamespaceCreateComponent,
@@ -143,6 +155,7 @@ export const dynMapDefault: UxDynMappingConfig = {
 		SxSchemaBrowseComponent,
 		SXSchemaCreateComponent,
 		SxSchemaEditComponent,
+		SXSchemaIndexComponent,
 		SxSchemaSearchComponent,
 		SxSchemaViewComponent,
 

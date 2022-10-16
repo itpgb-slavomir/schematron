@@ -2,24 +2,27 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router, NavigationStart } from '@angular/router';
 import { DynFormApiService, UxDynFormModelArray, DynFormApi, UxDynFormModel } from '@eui/dynamic-forms';
 import { FolderService } from 'src/app/shared/api-client/api/folder.service';
-import { Folder } from 'src/app/shared/api-client/model/folder';
 import { LocalStorageService } from 'src/app/shared/services/local-storage.service';
 import { Subscription } from 'rxjs';
 import { Observable, BehaviorSubject, of, forkJoin, delay, ObservableInput, take } from 'rxjs';
-import SXEditFolderFormMetaData from './edit.form';
+import SXFormMetaData from './form';
 
 @Component({
-	selector: 'sx-folder-edit',
-	templateUrl: './edit.component.html',
-	styleUrls: ['./edit.component.scss']
+	selector: 'sx-form',
+	templateUrl: './form.component.html',
+	styleUrls: ['./form.component.scss']
 })
-export class SXFolderEditComponent implements OnInit {
+export class SXFormComponent implements OnInit {
 
 	public isBlocked: boolean = false;
 
 	public storage: Map<string, BehaviorSubject<string>> = new Map();
 
 	public form: DynFormApi;
+
+	public formMetaData: UxDynFormModelArray = SXFormMetaData;
+
+	public formModel: object;
 
 	private subscriptions: Subscription[] = [];
 
@@ -30,7 +33,7 @@ export class SXFolderEditComponent implements OnInit {
 		private localStorageService: LocalStorageService,
 		private service: FolderService
 	) {
-		this.form = this.formApiService.createForm(SXEditFolderFormMetaData);
+		this.form = this.formApiService.createForm(SXFormMetaData);
 
 		this.subscriptions.push(
 			this.form.subEvent().subscribe(
@@ -165,4 +168,5 @@ export class SXFolderEditComponent implements OnInit {
 
 	ngOnInit(): void {
 	}
+
 }

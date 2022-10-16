@@ -1,0 +1,22 @@
+<eui-page>
+
+	<eui-page-header 
+		label="New document.xml"
+		subLabel="">
+
+		<eui-page-header-action-items>
+			<button euiButton euiPrimary>{{ 'upload' | translate }}</button>
+			<button euiButton euiPrimary>{{ 'new' | translate }}</button>
+		</eui-page-header-action-items>
+
+	</eui-page-header>
+		
+	<eui-page-content>
+
+		<eui-block-content>
+			<router-outlet></router-outlet>
+		</eui-block-content>
+
+	</eui-page-content>
+
+</eui-page>
