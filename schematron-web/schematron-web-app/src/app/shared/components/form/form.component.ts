@@ -36,14 +36,16 @@ export class SXFormComponent implements OnInit {
 		this.form = this.formApiService.createForm(SXFormMetaData);
 
 		this.subscriptions.push(
-			this.form.subEvent().subscribe(
-				(event: any) => {
-					this.onFormChange(event);
-				},
-				(error: any) => {
-					this.onFormChange(event);
-				}
-			)
+
+			this.form.subEvent()
+				.subscribe(
+					(event: any) => {
+						this.onFormChange(event);
+					},
+					(error: any) => {
+						this.onFormChange(error);
+					}
+				)
 		);
 
 
@@ -53,7 +55,7 @@ export class SXFormComponent implements OnInit {
 					this.onRouterChange(event);
 				},
 				(error: any) => {
-					this.onRouterChange(event);
+					this.onError(error);
 				}
 			)
 		);
@@ -64,10 +66,11 @@ export class SXFormComponent implements OnInit {
 					this.onRouterChange(event);
 				},
 				(error: any) => {
-					this.onRouterChange(event);
+					this.onError(error);
 				}
 			)
 		);
+
 		/*
 
 		this.observers.push();
@@ -97,7 +100,7 @@ export class SXFormComponent implements OnInit {
 					this.onFormState(event);
 				},
 				(error: any) => {
-					this.onFormState(event);
+					this.onError(error);
 				}
 			)
 		);
@@ -107,10 +110,15 @@ export class SXFormComponent implements OnInit {
 					this.ongFormModelChangesChange(event);
 				},
 				(error: any) => {
-					this.ongFormModelChangesChange(event);
+					this.onError(error);
 				}
 			)
 		);
+	}
+
+	private onError(event): void {
+
+		console.error('onError', event);
 	}
 
 	private onFormChange(event): void {
@@ -126,6 +134,7 @@ export class SXFormComponent implements OnInit {
 	private onRouterChange(event) {
 		//console.log('onRouterChange', event);
 	}
+
 	private onQueryParamChange(event) {
 		//console.log('onQueryParamChange', event);
 	}

@@ -48,9 +48,15 @@ import { SXSchemaIndexComponent } from './components/schema/index/index.componen
 import { SxSchemaSearchComponent } from './components/schema/search/search.component';
 import { SxSchemaViewComponent } from './components/schema/view/view.component';
 
+import { SXSpaceBrowseComponent } from './components/space/browse/browse.component';
+import { SXSpaceIndexComponent } from './components/space/index/index.component';
+import { SXSpaceDetailComponent } from './components/space/detail/detail.component';
+
 import { SXUploadComponent } from './components/upload/upload.component';
 
 import { LocalStorageService } from './services/local-storage.service';
+import { SXSpaceCreateComponent } from './components/space/create/create.component';
+
 
 export const dynMapDefault: UxDynMappingConfig = {
 	rulesMap: {
@@ -112,8 +118,12 @@ export const dynMapDefault: UxDynMappingConfig = {
 		SxSchemaSearchComponent,
 		SxSchemaViewComponent,
 
-		SXUploadComponent,
+		SXSpaceBrowseComponent,
+		SXSpaceCreateComponent,
+		SXSpaceDetailComponent,
+		SXSpaceIndexComponent,
 
+		SXUploadComponent,
 	],
 
 	exports: [
@@ -158,6 +168,11 @@ export const dynMapDefault: UxDynMappingConfig = {
 		SXSchemaIndexComponent,
 		SxSchemaSearchComponent,
 		SxSchemaViewComponent,
+
+		SXSpaceBrowseComponent,
+		SXSpaceCreateComponent,
+		SXSpaceDetailComponent,
+		SXSpaceIndexComponent,
 
 		SXUploadComponent
 	],

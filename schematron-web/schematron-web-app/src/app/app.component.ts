@@ -20,14 +20,14 @@ export class AppComponent implements OnInit, OnDestroy {
 
 	toolbarMenuItems = [
 		{
-			label: 'Dashboard',
+			label: 'dashboard',
 			url: ['', 'dashboard'],
 			iconClass: ''
 		},
 
 		{
-			label: 'Documents',
-			url: ['', 'folder'],
+			label: 'Space',
+			url: ['', 'space'],
 			iconClass: '',
 			children: [
 				{
@@ -37,23 +37,16 @@ export class AppComponent implements OnInit, OnDestroy {
 				},
 
 				{
-					label: 'Search',
-					url: ['', 'folder', 'search'],
-					iconClass: ''
-				},
-
-				{
-					label: 'Upload',
-					url: ['', 'folder', 'upload'],
-					iconClass: ''
-				},
-
-				{
 					label: 'Create',
-					url: ['', 'folder', 'create-wizard'],
+					url: ['', 'create-wizard'],
 					iconClass: '',
 
 					children: [
+						{
+							label: 'Create Space',
+							url: ['', 'space', 'edit'],
+							iconClass: ''
+						},
 						{
 							label: 'Create Folder',
 							url: ['', 'folder', 'edit'],
@@ -70,6 +63,18 @@ export class AppComponent implements OnInit, OnDestroy {
 							iconClass: ''
 						}
 					]
+				},
+
+				{
+					label: 'Search',
+					url: ['', 'folder', 'search'],
+					iconClass: ''
+				},
+
+				{
+					label: 'Upload',
+					url: ['', 'folder', 'upload'],
+					iconClass: ''
 				},
 			]
 		},

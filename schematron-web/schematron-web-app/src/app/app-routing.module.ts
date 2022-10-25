@@ -25,6 +25,10 @@ import { SxSchemaEditComponent } from './shared/components/schema/edit/edit.comp
 import { SXSchemaIndexComponent } from './shared/components/schema/index/index.component';
 import { SxSchemaViewComponent } from './shared/components/schema/view/view.component';
 
+import { SXSpaceIndexComponent } from './shared/components/space/index/index.component';
+import { SXSpaceBrowseComponent } from './shared/components/space/browse/browse.component';
+
+
 import { SXUploadComponent } from './shared/components/upload/upload.component';
 
 const routes: Routes = [
@@ -54,6 +58,29 @@ const routes: Routes = [
 	},
 
 	{
+		path: 'space',
+		component: SXSpaceIndexComponent,
+		children: [
+			{
+				path: '',
+				component: SXSpaceBrowseComponent
+			},
+			{
+				path: 'new',
+				component: SXFolderEditComponent
+			},
+			{
+				path: 'edit/:spaceId',
+				component: SXFolderEditComponent
+			},
+		]
+	},
+	{
+		path: 'create-wizard',
+		component: SXCreateWizardComponent,
+	},
+
+	{
 		path: 'folder',
 		component: SXFolderIndexComponent,
 
@@ -73,15 +100,20 @@ const routes: Routes = [
 			},
 
 			{
+				path: 'upload',
+				component: SXUploadComponent
+			},
+
+			{
+				path: 'create',
+				component: SXFolderCreateComponent
+			},
+			{
 				path: 'edit',
 				component: SXFolderEditComponent
 			},
 			{
 				path: ':uuid',
-				component: SXFolderEditComponent
-			},
-			{
-				path: 'create',
 				component: SXFolderEditComponent
 			},
 
